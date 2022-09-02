@@ -12,8 +12,8 @@
 
 <script setup>
 import { ref } from 'vue'
-import { fetchSheetAsJson } from '../utils'
-import { fetchMockedData } from "../mock"
+import { fetchSheetAsArray } from '../utils'
+import { fetchMockedArt } from "../mock"
 
 const isLoaded = ref(false);
 const isLoading = ref(true);
@@ -22,17 +22,17 @@ const artProjects = ref([]);
 function fetchData() {
   if (isLoaded.value) return;
   const GOOGLE_SHEET = "https://opensheet.elk.sh/1Lwp385S5sqEs_E5Sg7ortIC1dbfen-AufyiLsB-I4ZE/art";
-  fetchSheetAsJson(GOOGLE_SHEET)
-    .then(function (json) {
-      artProjects.value = json;
+  fetchSheetAsArray(GOOGLE_SHEET)
+    .then(function (items) {
+      artProjects.value = items;
       isLoaded.value = true;
-      console.log(JSON.stringify(json, null, 2));
+      console.log(JSON.stringify(items, null, 2));
     });
 }
 
 // Prevents unnecessary API usage during development
 function mockData() {
-  fetchMockedData()
+  fetchMockedArt()
     .then(function (data) {
       artProjects.value = data;
       isLoaded.value = true;

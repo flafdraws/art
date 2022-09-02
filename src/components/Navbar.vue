@@ -6,7 +6,8 @@
     </div>
 
     <div :class="menuClass">
-      <q-tabs v-model="modelValue" @update:model-value="updateValue" inline-label :vertical="$q.screen.xs">
+      <q-tabs v-model="modelValue" @update:model-value="updateValue" inline-label :vertical="$q.screen.xs"
+        active-color="primary" class="inactive">
         <q-tab v-for="(item, i) in tabs" :key=i :name="i" :label="item.label" :icon="item.icon" />
       </q-tabs>
     </div>
@@ -51,7 +52,11 @@ function updateValue(value) {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.inactive {
+  color: $disabled;
+}
+
 .fluid {
   width: 100%;
 }

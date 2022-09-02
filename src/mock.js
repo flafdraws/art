@@ -5,7 +5,7 @@ const dataToPromise = (data) => new Promise(function (resolve, reject) {
   setTimeout(() => resolve(data), 500);
 });
 
-export function fetchMockedData() {
+export function fetchMockedArt() {
   const data = [
     { "title": "Farm Girl (study)", "date": "2022/05/03", "thumb": "https://i.postimg.cc/mks0RL0X/Blob-Paint1920.png" },
     { "title": "Mood (study)", "date": "2022/05/03", "thumb": "https://i.postimg.cc/N0btdrSs/mood2.png" },
@@ -18,6 +18,22 @@ export function fetchMockedData() {
     { "title": "Sword Girls 4", "date": "2022/03/19", "thumb": "https://cdnb.artstation.com/p/assets/images/images/047/874/403/large/flavio-freitas-sword-girl-4.jpg?1648651531" },
     { "title": "Sword Girls 5", "date": "2022/03/20", "thumb": "https://cdna.artstation.com/p/assets/images/images/047/874/408/large/flavio-freitas-sword-girl-5.jpg?1648651537" },
     { "title": "Sword Girls 6", "date": "2022/03/21", "thumb": "https://cdnb.artstation.com/p/assets/images/images/047/874/369/large/flavio-freitas-sword-girl-6.jpg?1648651494" },
+  ];
+
+  return dataToPromise(data);
+}
+
+export function fetchMockedSocials() {
+  const data = [
+    { "show": "O", "name": "ArtStation", "icon": "mdi-artstation", "color": "blue", "href": "https://artstation.com/flafdraws'" },
+    { "show": "O", "name": "Instagram", "icon": "mdi-instagram", "color": "pink-5", "href": "https://instagram.com/flafdraws'" },
+    { "show": "O", "name": "DeviantArt", "icon": "mdi-deviantart", "color": "green", "href": "https://deviantart.com/flafdraws'" },
+    { "show": "O", "name": "Twitter", "icon": "mdi-twitter", "color": "light-blue", "href": "https://twitter.com/flafdraws'" },
+    { "show": "O", "name": "Youtube", "icon": "mdi-youtube", "color": "red", "href": "https://www.youtube.com/channel/UCLq1fsQwY9fP3dOF8JBhjLw?sub_confirmation=1'" },
+    { "show": "O", "name": "Twitch", "icon": "mdi-twitch", "color": "purple-5", "href": "https://twitch.com/flafdraws'" },
+    { "show": "O", "name": "Reddit", "icon": "mdi-reddit", "color": "orange-10", "href": "https://www.reddit.com/user/flafdraws'" },
+    { "show": "O", "name": "Discord", "icon": "discord", "color": "deep-purple-4", "href": "https://discord.gg/U3vAmcuxSN'" },
+    { "show": "O", "name": "Ko-fi", "icon": "img:kofi.svg", "color": "light-blue", "href": "https://ko-fi.com/flafdraws'" }
   ];
 
   return dataToPromise(data);

@@ -1,4 +1,4 @@
-export function fetchSheetAsJson(sheetUrl) {
+export function fetchSheetAsArray(sheetUrl) {
   return fetch(sheetUrl)
     .then(function (result) {
       return result.text();
