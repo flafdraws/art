@@ -21,6 +21,7 @@ const artProjects = ref([]);
 
 function fetchData() {
   if (isLoaded.value) return;
+
   const GOOGLE_SHEET = "https://opensheet.elk.sh/1Lwp385S5sqEs_E5Sg7ortIC1dbfen-AufyiLsB-I4ZE/art";
   fetchSheetAsArray(GOOGLE_SHEET)
     .then(function (items) {
@@ -39,8 +40,8 @@ function mockData() {
     });
 }
 
-// fetchData();
-mockData();
+fetchData();
+// mockData();
 </script>
 
 <style scoped>

@@ -24,15 +24,20 @@ import { fetchMockedSocials } from './mock'
 const socials = ref([]);
 const GOOGLE_SHEET = "https://opensheet.elk.sh/1Lwp385S5sqEs_E5Sg7ortIC1dbfen-AufyiLsB-I4ZE/socials";
 
-// fetchSheetAsArray(GOOGLE_SHEET)
-fetchMockedSocials()
+const isSocialsLoaded = false;
+
+fetchSheetAsArray(GOOGLE_SHEET)
+  // fetchMockedSocials()
   .then(items => {
+    if (isSocialsLoaded) return;
+
     for (let i = 0; i < items.length; i++) {
       const social = items[i];
       social.show = social.show === "O" ? true : false;
     }
 
     socials.value = items;
+    isSocialsLoaded = true;
   });
 
 const tab = ref(0);
