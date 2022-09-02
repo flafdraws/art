@@ -1,12 +1,21 @@
+<template>
+  <div>
+    <Header :class="$q.screen.xs ? 'q-mt-xs' : 'q-mt-md'" />
+    <Navbar v-model="tab" :class="$q.screen.gt.xs ? 'q-mb-lg' : ''" />
+    <Art v-show="tab == 0" />
+  </div>
+</template>
+
+
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import Art from './components/Art.vue';
+import Navbar from './components/Navbar.vue';
+import Header from './components/Header.vue';
+import { ref } from 'vue';
+
+const tab = ref(0);
 </script>
 
-<template>
-  <HelloWorld msg="Hello, Artpage" />
-</template>
 
 <style scoped>
 .logo {
@@ -23,3 +32,13 @@ import HelloWorld from './components/HelloWorld.vue'
   filter: drop-shadow(0 0 2em #42b883aa);
 }
 </style>
+
+<script>
+export default
+  {
+    name: 'App',
+    created() {
+      this.$q.dark.set(true);
+    }
+  }
+</script>

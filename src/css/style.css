@@ -1,0 +1,12 @@
+:root {
+  background: rgb(17, 11, 19);
+  background: -moz-linear-gradient(0deg, rgba(17, 11, 19, 1) 0%, rgba(11, 14, 19, 1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(17, 11, 19, 1) 0%, rgba(11, 14, 19, 1) 100%);
+  background: linear-gradient(0deg, rgba(17, 11, 19, 1) 0%, rgba(11, 14, 19, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#110b13", endColorstr="#0b0e13", GradientType=1);
+  background-attachment: fixed;
+}
+
+body.body--dark {
+  background-color: transparent !important;
+}
