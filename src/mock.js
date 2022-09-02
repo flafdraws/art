@@ -1,7 +1,6 @@
 /* ========================================================
  *  MOCKED DATA
  * ======================================================== */
-
 const dataToPromise = (data) => new Promise(function (resolve, reject) {
   setTimeout(() => resolve(data), 500);
 });

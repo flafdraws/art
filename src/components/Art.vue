@@ -30,12 +30,17 @@ function fetchData() {
     });
 }
 
+// Prevents unnecessary API usage during development
+function mockData() {
+  fetchMockedData()
+    .then(function (data) {
+      artProjects.value = data;
+      isLoaded.value = true;
+    });
+}
+
 // fetchData();
-fetchMockedData()
-  .then(function (data) {
-    artProjects.value = data;
-    isLoaded.value = true;
-  })
+mockData();
 </script>
 
 <style scoped>
