@@ -5,7 +5,9 @@
     <Navbar v-model="tab" :class="$q.screen.gt.xs ? 'q-mb-lg' : 'q-mb-xl'" />
     <Art v-show="tab == 0" />
     <br>
-    <Socials class="q-mt-xl" :socials="socials" />
+
+    <ScrollButton class="q-my-xl" />
+    <Socials :socials="socials" />
     <Footer />
   </div>
 </template>
@@ -17,6 +19,7 @@ import Socials from './components/Socials.vue';
 import Header from './components/Header.vue';
 import Navbar from './components/Navbar.vue';
 import Footer from './components/Footer.vue';
+import ScrollButton from './components/ScrollButton.vue';
 import { ref } from 'vue';
 import { fetchSheetAsArray } from './utils'
 import { fetchMockedSocials } from './mock'
@@ -26,8 +29,8 @@ const GOOGLE_SHEET = "https://opensheet.elk.sh/1Lwp385S5sqEs_E5Sg7ortIC1dbfen-Au
 
 const isSocialsLoaded = false;
 
-fetchSheetAsArray(GOOGLE_SHEET)
-  // fetchMockedSocials()
+// fetchSheetAsArray(GOOGLE_SHEET)
+fetchMockedSocials()
   .then(items => {
     if (isSocialsLoaded) return;
 

@@ -3,7 +3,7 @@
     <div v-for="(item, i) in socials" :key="i">
       <q-btn v-if="item.show" :icon="item.icon" :href="item.href" target="__blank" outline round :color="item.color"
         class="social-btn" size="12px">
-        <q-tooltip :class="`bg-${item.color} text`" anchor="top middle" self="bottom middle">{{
+        <q-tooltip :class="`bg-${item.color} text-weight-bold text-black`" anchor="top middle" self="bottom middle">{{
             item.name
         }}
         </q-tooltip>
