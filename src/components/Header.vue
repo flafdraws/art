@@ -2,7 +2,7 @@
   <div>
     <div class="flex flex-center">
       <div class="flex flex-center q-mx-md q-my-md">
-        <img src="public/avatar.png" width="110" height="110" class="ring r-margin" />
+        <img src="avatar.png" width="110" height="110" class="ring r-margin" />
         <div class="flex column flex-start x-margin">
           <p class="header-minor q-pa-none q-ma-none">Art of</p>
           <p class="header-major q-pa-none q-ma-none">Flaf</p>

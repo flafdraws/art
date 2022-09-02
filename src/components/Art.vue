@@ -27,7 +27,6 @@ function fetchData() {
     .then(function (items) {
       artProjects.value = items;
       isLoaded.value = true;
-      console.log(JSON.stringify(items, null, 2));
     });
 }
 
