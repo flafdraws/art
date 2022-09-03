@@ -2,7 +2,7 @@
   <div class="flex justify-center items-start">
 
     <div class="flex column justify-center items-center q-pt-md avatar-column">
-      <img src="avatar.png" width="200" height="200" class="ring r-margin" />
+      <img src="avatar.png" width="200" height="200" class="moon r-margin" />
       <span class="text-h6 w500 q-mt-lg">FLÁVIO FREITAS</span>
       <span class="w200 q-mt-sm">FREELANCE ILLUSTRATOR</span>
       <span class="text-caption email q-mt-sm text-grey-4">
@@ -48,7 +48,7 @@ span {
   line-height: 22px;
 }
 
-.ring {
+.moon {
   // border: 5px solid $border;
   box-shadow: 0rem 0.15rem 0.15rem 0.15rem $border;
   border-radius: 100%;

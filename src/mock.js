@@ -1,10 +1,7 @@
 /* ========================================================
  *  MOCKED DATA
+ *  Prevents unnecessary API usage during development
  * ======================================================== */
-const dataToPromise = (data) => new Promise(function (resolve, reject) {
-  setTimeout(() => resolve(data), 500);
-});
-
 export function fetchMockedArt() {
   const data = [
     { "title": "Farm Girl (study)", "date": "2022/05/03", "thumb": "https://i.postimg.cc/mks0RL0X/Blob-Paint1920.png" },
@@ -38,4 +35,10 @@ export function fetchMockedSocials() {
 
   return dataToPromise(data);
 }
+
+// Private
+const REQUEST_DELAY_MS = 500;
+const dataToPromise = (data) => new Promise(function (resolve, reject) {
+  setTimeout(() => resolve(data), REQUEST_DELAY_MS);
+});
 /* ======================================================== */

@@ -19,8 +19,6 @@
 <script setup>
 import { ref } from 'vue';
 import { fetchSheetAsArray } from './utils'
-import { fetchMockedSocials } from './mock'
-import { Screen } from 'quasar';
 import Art from './components/Art.vue';
 import Socials from './components/Socials.vue';
 import Header from './components/Header.vue';
@@ -28,7 +26,6 @@ import Navbar from './components/Navbar.vue';
 import Footer from './components/Footer.vue';
 import ScrollButton from './components/ScrollButton.vue';
 import About from './components/About.vue';
-import { computed } from '@vue/reactivity';
 
 
 const socials = ref([]);
@@ -36,7 +33,6 @@ const tab = ref(0);
 var isSocialsLoaded = false;
 const GOOGLE_SHEET = "https://opensheet.elk.sh/1Lwp385S5sqEs_E5Sg7ortIC1dbfen-AufyiLsB-I4ZE/socials";
 fetchSheetAsArray(GOOGLE_SHEET)
-  // fetchMockedSocials()
   .then(items => {
     if (isSocialsLoaded) return;
 

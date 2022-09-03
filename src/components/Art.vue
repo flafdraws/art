@@ -13,7 +13,6 @@
 <script setup>
 import { ref } from 'vue'
 import { fetchSheetAsArray } from '../utils'
-import { fetchMockedArt } from "../mock"
 
 const isLoaded = ref(false);
 const isLoading = ref(true);
@@ -30,17 +29,7 @@ function fetchData() {
     });
 }
 
-// Prevents unnecessary API usage during development
-function mockData() {
-  fetchMockedArt()
-    .then(function (data) {
-      artProjects.value = data;
-      isLoaded.value = true;
-    });
-}
-
 fetchData();
-// mockData();
 </script>
 
 <style scoped>
