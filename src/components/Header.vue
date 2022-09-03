@@ -1,10 +1,8 @@
 <template>
-  <div class="q-mb-lg">
-    <q-parallax src="https://i.postimg.cc/NfNHvfvk/banner-artstation.png" :height="bannerHeight">
-      <p class="banner header-minor q-pa-none q-ma-none">Art of</p>
-      <p class="banner header-major q-pa-none q-ma-none">Flaf</p>
-    </q-parallax>
-  </div>
+  <q-parallax src="https://i.postimg.cc/NfNHvfvk/banner-artstation.png" :height="bannerHeight">
+    <p class="banner header-minor q-pa-none q-ma-none">Art of</p>
+    <p class="banner header-major q-pa-none q-ma-none">Flaf</p>
+  </q-parallax>
 </template>
 
 <script setup>

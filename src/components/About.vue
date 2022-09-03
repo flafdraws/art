@@ -22,8 +22,6 @@
 
       </div>
       <span class="q-mt-md">Thank you for your visit!</span>
-      <div class="q-my-xl"></div>
-      <div class="q-my-xl"></div>
     </div>
 
   </div>

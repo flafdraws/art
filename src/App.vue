@@ -1,8 +1,7 @@
 <template>
   <div>
     <Header />
-    <!-- <Socials class="q-mb-xl" :socials="socials" /> -->
-    <Navbar v-model="tab" :class="$q.screen.gt.xs ? 'q-mb-lg' : 'q-mb-xl'" />
+    <Navbar v-model="tab" class="q-mb-xl" />
     <Art v-show="tab == 0" />
     <About v-show="tab == 1" />
 
