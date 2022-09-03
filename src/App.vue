@@ -1,16 +1,17 @@
 <template>
   <div>
-    <Header :class="$q.screen.xs ? 'q-mt-xs' : 'q-mt-md'" />
-    <Socials class="q-mb-xl" :socials="socials" />
+    <Header />
+    <!-- <Socials class="q-mb-xl" :socials="socials" /> -->
     <Navbar v-model="tab" :class="$q.screen.gt.xs ? 'q-mb-lg' : 'q-mb-xl'" />
     <Art v-show="tab == 0" />
     <About v-show="tab == 1" />
+
     <br>
-    <div v-show="tab != 1">
-      <ScrollButton class="q-my-xl" />
-      <Socials :socials="socials" />
-    </div>
+    <div class="q-mt-xl"></div>
+    <Socials :socials="socials" />
     <Footer />
+    <ScrollButton v-show="tab != 1" class="q-mt-lg" />
+    <div class="q-mt-lg" />
   </div>
 </template>
 
@@ -34,8 +35,8 @@ const socials = ref([]);
 const tab = ref(0);
 var isSocialsLoaded = false;
 const GOOGLE_SHEET = "https://opensheet.elk.sh/1Lwp385S5sqEs_E5Sg7ortIC1dbfen-AufyiLsB-I4ZE/socials";
-// fetchSheetAsArray(GOOGLE_SHEET)
-fetchMockedSocials()
+fetchSheetAsArray(GOOGLE_SHEET)
+  // fetchMockedSocials()
   .then(items => {
     if (isSocialsLoaded) return;
 

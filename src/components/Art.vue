@@ -39,8 +39,8 @@ function mockData() {
     });
 }
 
-// fetchData();
-mockData();
+fetchData();
+// mockData();
 </script>
 
 <style scoped>
