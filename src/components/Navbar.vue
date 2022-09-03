@@ -26,8 +26,6 @@ const mobileMenuLabel = computed(() => mobileMenuExpanded.value ? '' : 'Menu');
 const menuClass = computed(() => {
   return Screen.xs ? `mobileMenu ${mobileMenuExpanded.value ? '' : 'shrink'}` : '';
 });
-const mobileMenuClass = computed(() => `mobileMenu ${mobileMenuExpanded.value ? '' : 'shrink'}`);
-// const containerClass = computed(() => );
 const toggleMobileVisility = () => { mobileMenuExpanded.value = !mobileMenuExpanded.value }
 
 const tabs = ref([

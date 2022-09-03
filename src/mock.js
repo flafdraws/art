@@ -25,15 +25,15 @@ export function fetchMockedArt() {
 
 export function fetchMockedSocials() {
   const data = [
-    { "show": "O", "name": "ArtStation", "icon": "mdi-artstation", "color": "blue", "href": "https://artstation.com/flafdraws'" },
-    { "show": "O", "name": "Instagram", "icon": "mdi-instagram", "color": "pink-5", "href": "https://instagram.com/flafdraws'" },
-    { "show": "O", "name": "DeviantArt", "icon": "mdi-deviantart", "color": "green", "href": "https://deviantart.com/flafdraws'" },
-    { "show": "O", "name": "Twitter", "icon": "mdi-twitter", "color": "light-blue", "href": "https://twitter.com/flafdraws'" },
-    { "show": "O", "name": "Youtube", "icon": "mdi-youtube", "color": "red", "href": "https://www.youtube.com/channel/UCLq1fsQwY9fP3dOF8JBhjLw?sub_confirmation=1'" },
-    { "show": "O", "name": "Twitch", "icon": "mdi-twitch", "color": "purple-5", "href": "https://twitch.com/flafdraws'" },
-    { "show": "O", "name": "Reddit", "icon": "mdi-reddit", "color": "orange-10", "href": "https://www.reddit.com/user/flafdraws'" },
-    { "show": "O", "name": "Discord", "icon": "discord", "color": "deep-purple-4", "href": "https://discord.gg/U3vAmcuxSN'" },
-    { "show": "O", "name": "Ko-fi", "icon": "img:kofi.svg", "color": "light-blue", "href": "https://ko-fi.com/flafdraws'" }
+    { "show": "O", "name": "ArtStation", "icon": "mdi-artstation", "color": "blue", "href": "https://artstation.com/flafdraws" },
+    { "show": "O", "name": "Instagram", "icon": "mdi-instagram", "color": "pink-5", "href": "https://instagram.com/flafdraws" },
+    { "show": "O", "name": "DeviantArt", "icon": "mdi-deviantart", "color": "green", "href": "https://deviantart.com/flafdraws" },
+    { "show": "O", "name": "Twitter", "icon": "mdi-twitter", "color": "light-blue", "href": "https://twitter.com/flafdraws" },
+    { "show": "O", "name": "Youtube", "icon": "mdi-youtube", "color": "red", "href": "https://www.youtube.com/channel/UCLq1fsQwY9fP3dOF8JBhjLw?sub_confirmation=1" },
+    { "show": "O", "name": "Twitch", "icon": "mdi-twitch", "color": "purple-5", "href": "https://twitch.com/flafdraws" },
+    { "show": "O", "name": "Reddit", "icon": "mdi-reddit", "color": "orange-10", "href": "https://www.reddit.com/user/flafdraws" },
+    { "show": "O", "name": "Discord", "icon": "discord", "color": "deep-purple-4", "href": "https://discord.gg/U3vAmcuxSN" },
+    { "show": "O", "name": "Ko-fi", "icon": "img:kofi.svg", "color": "light-blue", "href": "https://ko-fi.com/flafdraws" }
   ];
 
   return dataToPromise(data);
