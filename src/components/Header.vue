@@ -1,6 +1,6 @@
 <template>
   <div class="q-mb-lg">
-    <q-parallax src="https://i.postimg.cc/7PGWSbNC/banner-artpage.png" :height="Screen.gt.xs ? 200 : 150">
+    <q-parallax src="https://i.postimg.cc/NfNHvfvk/banner-artstation.png" :height="bannerHeight">
       <p class="banner header-minor q-pa-none q-ma-none">Art of</p>
       <p class="banner header-major q-pa-none q-ma-none">Flaf</p>
     </q-parallax>
@@ -8,7 +8,12 @@
 </template>
 
 <script setup>
+import { computed } from '@vue/reactivity';
 import { Screen } from 'quasar';
+
+const bannerHeight = computed(() => {
+  return Math.min(Screen.height * 0.4, 450);
+});
 </script>
 
 <style lang="scss" scoped>
@@ -26,14 +31,15 @@ import { Screen } from 'quasar';
 }
 
 .header-minor {
-  font-size: 35px;
+  font-size: 4.5vh;
   font-weight: 400;
+  line-height: 4.5vh;
 }
 
 .header-major {
-  font-size: 60px;
+  font-size: 9vh;
   font-weight: 700;
-  line-height: 55px;
+  line-height: 9vh;
 }
 
 .x-margin {
