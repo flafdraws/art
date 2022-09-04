@@ -5,14 +5,17 @@
 
     <Loading :loading="loading" />
     <LoadingFailed v-if="failedToLoad && !loading" @reload="fetchPageData" />
-    <Art v-if="tab == 0" :items="artProjects" />
-    <About v-if="tab == 1" :about="about" :loading="loading" />
+    <div v-if="!loading && !failedToLoad">
+      <Art v-if="tab == 0" :items="artProjects" />
+      <About v-if="tab == 1" :about="about" :loading="loading" />
+      <TOS v-if="tab == 2" :tos="tos" />
+    </div>
 
     <br>
     <div class="q-mt-xl"></div>
     <Socials :socials="socials" />
     <Footer />
-    <ScrollButton v-show="tab != 1" class="q-mt-lg" />
+    <ScrollButton class="q-mt-lg" />
     <div class="q-mt-lg" />
   </div>
 </template>
@@ -31,6 +34,7 @@ import About from './components/About.vue';
 import Loading from './components/Loading.vue';
 import { computed } from '@vue/reactivity';
 import LoadingFailed from './components/LoadingFailed.vue';
+import TOS from './components/TOS.vue';
 
 
 const isLoaded = ref(false);
@@ -45,6 +49,10 @@ const about = ref({
   text: [],
   thanks: ""
 });
+const tos = ref({
+  header: "TERMS OF SERVICE",
+  body: {}
+});
 
 const loading = computed(() => !isLoaded.value );
 
@@ -58,6 +66,7 @@ function fetchPageData() {
       socials.value = json.socials;
       artProjects.value = json.art;
       about.value = json.about;
+      tos.value = json.tos;
       isLoaded.value = true;
     },
     value => {
