@@ -4,6 +4,7 @@
     <Navbar v-model="tab" class="q-mb-xl" />
 
     <Loading :loading="loading" />
+    <LoadingFailed v-if="failedToLoad && !loading" @reload="fetchPageData" />
     <Art v-if="tab == 0" :items="artProjects" />
     <About v-if="tab == 1" :about="about" :loading="loading" />
 
@@ -19,7 +20,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { fetchSheetAsArray, fetchSheetAsJSON, stringToBooleanInArray, fetchJSON } from './fetch'
+import { fetchJSON } from './fetch'
 import Art from './components/Art.vue';
 import Socials from './components/Socials.vue';
 import Header from './components/Header.vue';
@@ -29,9 +30,11 @@ import ScrollButton from './components/ScrollButton.vue';
 import About from './components/About.vue';
 import Loading from './components/Loading.vue';
 import { computed } from '@vue/reactivity';
+import LoadingFailed from './components/LoadingFailed.vue';
 
-// Refs
+
 const isLoaded = ref(false);
+const failedToLoad = ref(false);
 const socials = ref([]);
 const tab = ref(0);
 const artProjects = ref([]);
@@ -43,70 +46,28 @@ const about = ref({
   thanks: ""
 });
 
-// Computed
 const loading = computed(() => !isLoaded.value );
 
-// Methods
-function onTabChange(newTab) {
-  switch (newTab) {
-    default:
-    case 0:
-      fetchArtTab();
-      break;
-    case 1:
-      fetchAboutTab();
-      break;
-  }
+function fetchPageData() {
+  isLoaded.value = false;
+  failedToLoad.false = false;
+  fetchJSON("https://api.npoint.io/6d9469bf770af6892bb8")
+  .then(
+    json =>
+    {
+      socials.value = json.socials;
+      artProjects.value = json.art;
+      about.value = json.about;
+      isLoaded.value = true;
+    },
+    value => {
+      failedToLoad.value = true;
+      isLoaded.value = true;
+    }
+  );
 }
 
-function fetchArtTab() {
-  if (isLoaded.value.art) return;
-
-  const GOOGLE_SHEET = "https://opensheet.elk.sh/1Lwp385S5sqEs_E5Sg7ortIC1dbfen-AufyiLsB-I4ZE/art";
-  fetchSheetAsArray(GOOGLE_SHEET)
-    .then(function (items) {
-      artProjects.value = items;
-      isLoaded.value.art = true;
-      // console.log('ART: ', items);
-    });
-}
-
-function fetchAboutTab() {
-  if (isLoaded.value.about) return;
-
-  const GOOGLE_SHEET = "https://opensheet.elk.sh/1Lwp385S5sqEs_E5Sg7ortIC1dbfen-AufyiLsB-I4ZE/about";
-  fetchSheetAsJSON(GOOGLE_SHEET)
-    .then(function (json) {
-      about.value = json;
-      isLoaded.value.about = true;
-      console.log('ABOUT: ', json);
-    });
-}
-
-function fetchSocials() {
-  if (isLoaded.value.socials) return;
-
-  const GOOGLE_SHEET = "https://opensheet.elk.sh/1Lwp385S5sqEs_E5Sg7ortIC1dbfen-AufyiLsB-I4ZE/socials";
-  fetchSheetAsArray(GOOGLE_SHEET)
-    .then(items => stringToBooleanInArray(items))
-    .then(items => {
-      socials.value = items;
-      isLoaded.value.socials = true;
-    });
-}
-
-// fetchSocials();
-// fetchArtTab();
-
-fetchJSON("https://api.npoint.io/6d9469bf770af6892bb8")
-.then(json =>
-{
-  console.log(json);
-  socials.value = json.socials;
-  artProjects.value = json.art;
-  about.value = json.about;
-  isLoaded.value = true;
-});
+fetchPageData();
 </script>
 
 

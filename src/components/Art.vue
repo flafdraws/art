@@ -1,6 +1,6 @@
 <template>
   <ul class="q-mx-xs image-gallery q-ma-lg">
-    <li v-for="(item, i) in items" :key="i" @click="">
+    <li v-for="(item, i) in items" :key="i">
       <img :src="item.thumb" :alt="item.title" />
     </li>
   </ul>
