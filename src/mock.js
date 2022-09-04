@@ -38,6 +38,20 @@ export function fetchMockedSocials() {
   return dataToPromise(data);
 }
 
+export function fetchMockedAbout() {
+  const data = [
+    { "key": "name", "value": "FLÁVIO FREITAS" },
+    { "key": "title", "value": "FREELANCE ILLUSTRATOR" },
+    { "key": "heading", "value": "Welcome!" },
+    { "key": "text", "value": "I am Flaf, a freelance artist from Brazil.\nI like games, anime and honing my art skills. _〆(。。)\n\nYou can find my art commissions info in this website.." },
+    { "key": "thanks", "value": "Thank you for your visit!" },
+    { "key": "contact", "value": "flafdraws.buy@gmail.com\nflafdraws#5176 (Discord)" },
+    { "key": "avatar", "value": "avatar.png" }
+  ];
+
+  return dataToPromise(data);
+}
+
 // Private
 const REQUEST_DELAY_MS = 500;
 const dataToPromise = (data) => new Promise(function (resolve, reject) {

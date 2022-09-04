@@ -36,14 +36,6 @@ const tabs = ref([
   { label: "Order", icon: "mdi-cart" }
 ])
 
-const props = defineProps({
-  tab: {
-    type: Number,
-    default: 0
-  }
-})
-
-
 const emit = defineEmits(['update:modelValue']);
 function updateValue(value) {
   emit('update:modelValue', modelValue.value);

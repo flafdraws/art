@@ -1,31 +1,49 @@
 <template>
-  <div class="flex justify-center items-start">
-
-    <div class="flex column justify-center items-center q-pt-md avatar-column">
-      <img src="avatar.png" width="200" height="200" class="moon r-margin" />
-      <span class="text-h6 w500 q-mt-lg">FLÁVIO FREITAS</span>
-      <span class="w200 q-mt-sm">FREELANCE ILLUSTRATOR</span>
-      <span class="text-caption email q-mt-sm text-grey-4">
-        flafdraws.buy@gmail.com<br>
-        flafdraws#5176 (Discord)
-      </span>
-    </div>
-
-    <div class="flex column flex-center text-column">
-      <p class="text-subtitle1 q-mt-lg q-mb-md welcome">Welcome!</p>
-      <div class="flex column flex-start q-my-sm">
-        <span>
-          I am Flaf, a freelance artist from Brazil.<br>
-          I like games, anime and honing my art skills. _〆(。。)<br><br>
-          You can find my art commissions info on this website..
-        </span>
-
+  <div v-show="!loading">
+    <div class="flex justify-center items-start">
+      <div class="flex column justify-center items-center q-pt-md avatar-column">
+        <img src="avatar.png" width="200" height="200" class="moon r-margin" />
+        <span class="text-h6 w500 q-mt-lg">{{ about.name }}</span>
+        <span class="w200 q-mt-sm">{{ about.title }}</span>
+        <div class="flex column q-mt-sm">
+          <span v-for="(item, i) in about.contact" :key="i" class="text-caption email text-grey-4">
+            {{ item }}
+          </span>
+        </div>
       </div>
-      <span class="q-mt-md">Thank you for your visit!</span>
-    </div>
 
+      <div class="flex column flex-center text-column">
+        <p class="text-subtitle1 q-mt-lg q-mb-md welcome">Welcome!</p>
+        <div class="flex column flex-start q-my-sm">
+          <span v-for="(item, i) in about.text" :key="i">
+            {{ item }}
+            <br v-if="item == ''">
+          </span>
+        </div>
+        <span class="q-mt-md">{{ about.thanks }}</span>
+      </div>
+    </div>
   </div>
 </template>
+
+<script setup>
+const props = defineProps({
+  about: {
+    type: Object,
+    default: () => ({
+      name: "",
+      title: "",
+      contact: [],
+      text: [],
+      thanks: ""
+    })
+  },
+  loading: {
+    type: Boolean,
+    default: false,
+  }
+})
+</script>
 
 <style scoped lang="scss">
 .welcome {

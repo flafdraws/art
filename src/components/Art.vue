@@ -1,35 +1,19 @@
 <template>
-  <ul v-if="isLoaded" class="q-mx-xs image-gallery q-ma-lg">
-    <li v-for="(item, i) in artProjects" :key="i" @click="">
+  <ul class="q-mx-xs image-gallery q-ma-lg">
+    <li v-for="(item, i) in items" :key="i" @click="">
       <img :src="item.thumb" :alt="item.title" />
     </li>
   </ul>
-  <div v-else-if="isLoading" class="flex flex-center loading">
-    <q-circular-progress indeterminate size="100px" color="primary" :thickness=".3" />
-  </div>
 </template>
 
 
 <script setup>
-import { ref } from 'vue'
-import { fetchSheetAsArray } from '../utils'
-
-const isLoaded = ref(false);
-const isLoading = ref(true);
-const artProjects = ref([]);
-
-function fetchData() {
-  if (isLoaded.value) return;
-
-  const GOOGLE_SHEET = "https://opensheet.elk.sh/1Lwp385S5sqEs_E5Sg7ortIC1dbfen-AufyiLsB-I4ZE/art";
-  fetchSheetAsArray(GOOGLE_SHEET)
-    .then(function (items) {
-      artProjects.value = items;
-      isLoaded.value = true;
-    });
-}
-
-fetchData();
+const props = defineProps({
+  items: {
+    type: Array,
+    default: () => []
+  }
+});
 </script>
 
 <style scoped>
