@@ -1,8 +1,8 @@
 <template>
   <div v-show="!loading">
     <div class="flex justify-center items-start">
-      <div class="flex column justify-center items-center q-pt-md avatar-column">
-        <img src="avatar.png" width="200" height="200" class="moon r-margin" />
+      <div class="flex column justify-center items-center q-pt-md column-margin">
+        <img src="avatar.png" width="200" height="200" class="moon" />
         <span class="text-h6 w500 q-mt-lg">{{ about.name }}</span>
         <span class="w200 q-mt-sm">{{ about.title }}</span>
         <div class="flex column q-mt-sm">
@@ -12,7 +12,7 @@
         </div>
       </div>
 
-      <div class="flex column flex-center text-column">
+      <div class="flex column flex-center column-margin">
         <p class="text-subtitle1 q-mt-lg q-mb-md welcome">Welcome!</p>
         <div class="flex column flex-start q-my-sm">
           <span v-for="(item, i) in about.text" :key="i">
@@ -50,11 +50,8 @@ const props = defineProps({
   font-weight: 500;
 }
 
-.avatar-column {
+.column-margin {
   margin-right: 12px;
-}
-
-.text-column {
   margin-left: 12px;
 }
 
@@ -65,7 +62,6 @@ span {
 }
 
 .moon {
-  // border: 5px solid $border;
   box-shadow: 0rem 0.15rem 0.15rem 0.15rem $border;
   border-radius: 100%;
 }

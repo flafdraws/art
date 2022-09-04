@@ -6,6 +6,7 @@ import { fetchMockedSocials, fetchMockedArt, fetchMockedAbout } from './mock.js'
 const IS_MOCKED = false;
 /* ======================================================== */
 
+
 export function fetchSheetAsArray(sheetUrl) {
   if (IS_MOCKED) {
     return mockSheetAsArray(sheetUrl);
