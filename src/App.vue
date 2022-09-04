@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <Navbar v-model="tab" class="q-mb-xl" @update:model-value="onTabChange" />
+    <Navbar v-model="tab" class="q-mb-xl" />
 
     <Loading :loading="loading" />
     <Art v-if="tab == 0" :items="artProjects" />
@@ -19,7 +19,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { fetchSheetAsArray, fetchSheetAsJSON, stringToBooleanInArray } from './fetch'
+import { fetchSheetAsArray, fetchSheetAsJSON, stringToBooleanInArray, fetchJSON } from './fetch'
 import Art from './components/Art.vue';
 import Socials from './components/Socials.vue';
 import Header from './components/Header.vue';
@@ -31,14 +31,7 @@ import Loading from './components/Loading.vue';
 import { computed } from '@vue/reactivity';
 
 // Refs
-const isLoaded = ref({
-  socials: false,
-  art: false,
-  about: false,
-  tos: false,
-  prices: false,
-  order: false
-});
+const isLoaded = ref(false);
 const socials = ref([]);
 const tab = ref(0);
 const artProjects = ref([]);
@@ -51,9 +44,7 @@ const about = ref({
 });
 
 // Computed
-const loading = computed(() => {
-  return (tab.value === 0 && !isLoaded.value.art) || (tab.value === 1 && !isLoaded.value.about);
-});
+const loading = computed(() => !isLoaded.value );
 
 // Methods
 function onTabChange(newTab) {
@@ -101,12 +92,21 @@ function fetchSocials() {
     .then(items => {
       socials.value = items;
       isLoaded.value.socials = true;
-      // console.log('SOCIALS: ', items);
     });
 }
 
-fetchSocials();
-fetchArtTab();
+// fetchSocials();
+// fetchArtTab();
+
+fetchJSON("https://api.npoint.io/6d9469bf770af6892bb8")
+.then(json =>
+{
+  console.log(json);
+  socials.value = json.socials;
+  artProjects.value = json.art;
+  about.value = json.about;
+  isLoaded.value = true;
+});
 </script>
 
 

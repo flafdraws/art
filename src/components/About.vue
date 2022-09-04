@@ -1,27 +1,25 @@
 <template>
-  <div v-show="!loading">
-    <div class="flex justify-center items-start">
-      <div class="flex column justify-center items-center q-pt-md column-margin">
-        <img src="avatar.png" width="200" height="200" class="moon" />
-        <span class="text-h6 w500 q-mt-lg">{{ about.name }}</span>
-        <span class="w200 q-mt-sm">{{ about.title }}</span>
-        <div class="flex column q-mt-sm">
-          <span v-for="(item, i) in about.contact" :key="i" class="text-caption email text-grey-4">
-            {{ item }}
-          </span>
-        </div>
+  <div class="flex justify-center items-start">
+    <div class="flex column justify-center items-center q-pt-md column-margin">
+      <img src="avatar.png" width="200" height="200" class="moon" />
+      <span class="text-h6 w500 q-mt-lg">{{ about.name }}</span>
+      <span class="w200 q-mt-sm">{{ about.title }}</span>
+      <div class="flex column q-mt-sm">
+        <span v-for="(item, i) in about.contact" :key="i" class="text-caption email text-grey-4">
+          {{ item }}
+        </span>
       </div>
+    </div>
 
-      <div class="flex column flex-center column-margin">
-        <p class="text-subtitle1 q-mt-lg q-mb-md welcome">Welcome!</p>
-        <div class="flex column flex-start q-my-sm">
-          <span v-for="(item, i) in about.text" :key="i">
-            {{ item }}
-            <br v-if="item == ''">
-          </span>
-        </div>
-        <span class="q-mt-md">{{ about.thanks }}</span>
+    <div class="flex column flex-center column-margin">
+      <p class="text-subtitle1 q-mt-lg q-mb-md welcome">Welcome!</p>
+      <div class="flex column flex-start q-my-sm">
+        <span v-for="(item, i) in about.text" :key="i">
+          {{ item }}
+          <br v-if="item == ''">
+        </span>
       </div>
+      <span class="q-mt-md">{{ about.thanks }}</span>
     </div>
   </div>
 </template>
