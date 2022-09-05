@@ -125,10 +125,10 @@ export function fetchMockedJSON() {
         { type: "h5", content: "Notes", icon: "mdi-comment-alert", iconColor: "warning" },
         {
           type: "ul", content: [
-            "All prices listed here are estimated and may change based on multiple factors (e.g.: character detail, scene detail, render level).",
-            "Prices are limited time offers and are not guaranteed to stay the same in the future.",
-            "Everything is negotiable - \"Dormammu, I've come to bargain\"",
-            "Remember to check the TOS tab for in-depth details."
+            "All prices listed here are <b>estimated</b> and may change based on multiple factors (e.g.: character detail, scene detail, render level).",
+            "Prices are <b>limited time offers</b> and are not guaranteed to stay the same in the future.",
+            "Everything is negotiable - <i>\"Dormammu, I've come to bargain\"</i>",
+            "Remember to check the TOS tab for in-depth details.",
           ]
         },
         { type: "mega-spacer", content: null },
@@ -152,7 +152,7 @@ export function fetchMockedJSON() {
             ["Plain Color or Gradient", "Free", "Free"],
             ["Abstract Design", "+ 10 USD", "+ 20 USD"],
             ["Simple Environment", "+ 30 USD", "+ 50 USD"],
-            ["Complex Scene (Perspective, architecture...)", "+ 60 USD", "+ 100 USD"]
+            ["Complex Scene (Perspective, architecture...)", "+ 60 USD", "+ 90 USD"]
           ]
         },
         { type: "big-spacer", content: null },
@@ -174,7 +174,7 @@ export function fetchMockedJSON() {
             ["A1: Branding only", "Promotional content linked to commercial projects: online shops, Youtube Twitch, influencer branding...", "+ 50%"],
             ["A2: Indirect Merch", "Merchandise where the art is not the main focus itself: book covers, commercial concept art, game assets...", "+ 100%"],
             ["A3: Direct Merch", "Merchandise where the art itself is the main focus: keychains, pillow covers, t-shirts...", "+ 200%"],
-            ["B: Privacy", "Private commission: the work remains secret until agreed date.", "+ 100%"]
+            ["B: Privacy", "Private commission: the work remains secret until agreed date.", "+ 50%"]
           ]
         },
       ],

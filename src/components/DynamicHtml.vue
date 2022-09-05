@@ -13,10 +13,10 @@
         <h6 v-else-if="item.type == 'h6'" class="text-grey-5">{{ item.content }}</h6>
         <h4 v-else-if="item.type == 'h4'">{{ item.content }}</h4>
         <ul v-else-if="item.type == 'ul'">
-          <li v-for="(li, j) in item.content" :key="j">{{ li }}</li>
+          <li v-for="(li, j) in item.content" :key="j" v-html="li"></li>
         </ul>
         <ol v-else-if="item.type == 'ol'">
-          <li v-for="(li, j) in item.content" :key="j">{{ li }}</li>
+          <li v-for="(li, j) in item.content" :key="j" v-html="li"></li>
         </ol>
         <div v-else-if="item.type == 'breadcrumbs'" class="flex column flex-center text-white q-my-sm">
           <div v-for="(el, j) in item.content" :key="j" class="flex column flex-center">
@@ -39,7 +39,7 @@ import Table from "./Table.vue";
 const props = defineProps({
   htmlText: {
     type: Object,
-    default: () =>({
+    default: () => ({
       header: "",
       body: []
     })
@@ -52,7 +52,7 @@ const props = defineProps({
 .content {
   max-width: 700px;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 1.05rem;
   text-align: justify;
 
   @media(max-aspect-ratio: 1/1) and (max-width: 480px) {
@@ -64,9 +64,9 @@ h3 {
   margin-top: 10px;
   margin-bottom: 40px;
   font-weight: 600;
-  font-size: 45px;
+  font-size: 2.8rem;
   text-align: center;
-  letter-spacing: 4px;
+  letter-spacing: 0.25rem;
 
   @media(max-aspect-ratio: 1/1) and (max-width: 480px) {
     font-size: 2rem;
@@ -78,9 +78,9 @@ h4 {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 1.88rem;
   text-align: center;
-  letter-spacing: 4px;
+  letter-spacing: 0.25rem;
 
   @media(max-aspect-ratio: 1/1) and (max-width: 480px) {
     font-size: 1.6rem;
@@ -91,8 +91,8 @@ h5 {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 500;
-  font-size: 22px;
-  letter-spacing: 1px;
+  font-size: 1.375rem;
+  letter-spacing: 0.1rem;
 
   @media(max-aspect-ratio: 1/1) and (max-width: 480px) {
     font-size: 1.2rem;
@@ -103,8 +103,8 @@ h6 {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 500;
-  font-size: 17px;
-  letter-spacing: 1px;
+  font-size: 1.06rem;
+  letter-spacing: 0.06rem;
 
   @media(max-aspect-ratio: 1/1) and (max-width: 480px) {
     font-size: 1rem;
@@ -113,15 +113,17 @@ h6 {
 
 ul,
 ol {
+  padding-left: 20px;
+  padding-right: 5px;
   margin: 0;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.0375rem;
 }
 
 .span,
 .format,
 .breadcrumbs {
   margin-bottom: 10px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.03125rem;
 }
 
 .spacer {
