@@ -1,15 +1,15 @@
 <template>
-  <DynamicHtml :html-text="tos" />
+  <DynamicHtml :html-text="prices" />
 </template>
 
 <script setup>
 import DynamicHtml from './DynamicHtml.vue';
 
 const props = defineProps({
-  tos: {
+  prices: {
     type: Object,
     default: () => ({
-      header: "TERMS OF SERVICE",
+      header: undefined,
       body: []
     })
   }

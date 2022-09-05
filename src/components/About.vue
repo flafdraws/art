@@ -1,23 +1,20 @@
 <template>
   <div class="flex justify-center items-start">
     <div class="flex column justify-center items-center q-pt-md column-margin">
-      <img src="avatar.png" width="200" height="200" class="moon" />
-      <span class="text-h6 w500 q-mt-lg">{{ about.name }}</span>
-      <span class="w200 q-mt-sm">{{ about.title }}</span>
-      <div class="flex column q-mt-sm">
-        <span v-for="(item, i) in about.contact" :key="i" class="text-caption email text-grey-4">
+      <img src="avatar.png" width="200" height="200" class="avatar" />
+      <span class="name">{{ about.name }}</span>
+      <span class="title">{{ about.title }}</span>
+      <div class="flex column q-mt-sm q-mb-md">
+        <span v-for="(item, i) in about.contact" :key="i" class="contact text-grey-4">
           {{ item }}
         </span>
       </div>
     </div>
 
     <div class="flex column flex-center column-margin">
-      <p class="text-subtitle1 q-mt-lg q-mb-md welcome">Welcome!</p>
+      <p class="text-subtitle1 q-mt-lg q-mb-sm welcome">Welcome!</p>
       <div class="flex column flex-start q-my-sm">
-        <span v-for="(item, i) in about.text" :key="i">
-          {{ item }}
-          <br v-if="item == ''">
-        </span>
+        <span v-html="about.text"></span>
       </div>
       <span class="q-mt-md">{{ about.thanks }}</span>
     </div>
@@ -54,26 +51,38 @@ const props = defineProps({
 }
 
 span {
-  font-weight: 200;
-  max-width: 270px;
+  font-weight: 300;
+  max-width: 300px;
   line-height: 22px;
+  letter-spacing: 0.6px;
 }
 
-.moon {
+.avatar {
   box-shadow: 0rem 0.15rem 0.15rem 0.15rem $border;
   border-radius: 100%;
 }
 
-.w500 {
+.name {
+  font-size: 25px;
   font-weight: 500;
+  margin-top: 25px;
+  letter-spacing: 3px;
 }
 
-.w200 {
-  font-weight: 200;
+.title {
+  color: $primary;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 15px;
+  letter-spacing: 1px;
 }
 
-.email {
+.contact {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
   text-align: center;
   line-height: 18px;
+
 }
 </style>

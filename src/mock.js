@@ -34,12 +34,12 @@ export function fetchMockedJSON() {
       "name": "FLÁVIO FREITAS",
       "title": "FREELANCE ILLUSTRATOR",
       "heading": "Welcome!",
-      "text": [
-        "I am Flaf, a freelance artist from Brazil.",
-        "I like games, anime and honing my art skills. _〆(。。)",
-        "",
-        "You can find my art commissions info in this website.."
-      ],
+      "text": "\
+      I am Flaf, a freelance artist from Brazil.<br>\
+      I like games, anime and honing my art skills. _〆(。。)<br>\
+      <br>\
+      You can find my art commissions info in this website..\
+      ",
       "thanks": "Thank you for your visit!",
       "contact": [
         "flafdraws.buy@gmail.com",
@@ -47,14 +47,13 @@ export function fetchMockedJSON() {
       ],
       "avatar": "avatar.png"
     },
-    tos:
-    {
+    tos: {
       header: "TERMS OF SERVICE",
       body: [
         { type: "h5", content: "Payment" },
-        { type: "h6", content: "Split options:" },
+        { type: "h6", content: "Split alternatives:" },
         {
-          type: "ul", content: [
+          type: "ol", content: [
             "Half upfront, half on completion.",
             "Full payment before commision starts."
           ]
@@ -102,23 +101,83 @@ export function fetchMockedJSON() {
 
         { type: "h4", content: "COMMERCIAL USE LICENSES" },
         { type: "h5", content: "Usage" },
-        { type: "span", content: "The owner of commercial use licenses have the rights to use the commission as merchandise to sell, promote, distribute, produce and for any other commercial purposes as long as they don't involve modifying the product or impacting negatively the artist." },
-        { type: "span", content: "If you want to re-sell artworks or use them as assets within any sort of application, contact me for a custom negotiation." },
+        { type: "span", content: "The purchaser of commercial use licenses have the rights to use the commission as merchandise to sell, promote, distribute, produce and for any other commercial purposes as long as they don't involve modifying the product or impacting negatively the artist." },
+        { type: "span", content: "If you want to re-sell artworks or use them as assets within any sort of application, contact me for a personalized negotiation." },
         { type: "big-spacer", content: null },
 
         { type: "h5", content: "Credits" },
-        { type: "span", content: "The owner of commercial use is still required to give proper credits to the artist while using or exposing the work." },
+        { type: "span", content: "The purchaser of commercial use is still required to give proper credits to the artist while using or exposing the work." },
         { type: "big-spacer", content: null },
 
         { type: "h5", content: "License Options" },
         {
           type: "format", content: "\
-        The commercial licensing options are listed in the table below.<br>\
+        The commercial licensing options are listed in a table at <i>Prices tab</i>.<br>\
         * Additional fees do stack by <b>sum</b>, not by multiplying - they are applied to the base price always. E.g.:"
         },
         { type: "format", content: "<b>Correct</b><br>A1 + B = Base + 50% + 100% = +150% = x 2.5" },
         { type: "format", content: "<b>Wrong</b><br>A1 + B = Base x 1.5 x 2 = x 3 = + 200%." },
       ]
+    },
+    prices: {
+      header: undefined,
+      body: [
+        { type: "h5", content: "Notes", icon: "mdi-comment-alert", iconColor: "warning" },
+        {
+          type: "ul", content: [
+            "All prices listed here are estimated and may change based on multiple factors (e.g.: character detail, scene detail, render level).",
+            "Prices are limited time offers and are not guaranteed to stay the same in the future.",
+            "Everything is negotiable - \"Dormammu, I've come to bargain\"",
+            "Remember to check the TOS tab for in-depth details."
+          ]
+        },
+        { type: "mega-spacer", content: null },
+
+        { type: "h4", content: "CHARACTERS" },
+        {
+          type: "table", content: [
+            ["Item", "Price (Line Art)", "Price (Painting)"],
+            ["Bust", "+ 30 USD", "+ 60 USD"],
+            ["Half-body", "+ 40 USD", "+ 75 USD"],
+            ["Full-body", "+ 50 USD", "+ 90 USD"],
+            ["Additional Character", "+ 60%", "+ 60%"]
+          ]
+        },
+        { type: "big-spacer", content: null },
+
+        { type: "h4", content: "BACKGROUND" },
+        {
+          type: "table", content: [
+            ["Item", "Price (Line Art)", "Price (Painting)"],
+            ["Plain Color or Gradient", "Free", "Free"],
+            ["Abstract Design", "+ 10 USD", "+ 20 USD"],
+            ["Simple Environment", "+ 30 USD", "+ 50 USD"],
+            ["Complex Scene (Perspective, architecture...)", "+ 60 USD", "+ 100 USD"]
+          ]
+        },
+        { type: "big-spacer", content: null },
+
+        { type: "h4", content: "RUSH ORDER" },
+        {
+          type: "table", content: [
+            ["Rush", "Description", "Price Increase"],
+            ["Boost", "⏱️🔽 Reduce deadline", "+ 50%"],
+            ["Nitro", "⏱️🔽 Reduce deadline +", "+ 100%"],
+          ]
+        },
+        { type: "mega-spacer", content: null },
+
+        { type: "h4", content: "COMMERCIAL LICENSES" },
+        {
+          type: "table", content: [
+            ["License", "Description", "Price Increase"],
+            ["A1: Branding only", "Promotional content linked to commercial projects: online shops, Youtube Twitch, influencer branding...", "+ 50%"],
+            ["A2: Indirect Merch", "Merchandise where the art is not the main focus itself: book covers, commercial concept art, game assets...", "+ 100%"],
+            ["A3: Direct Merch", "Merchandise where the art itself is the main focus: keychains, pillow covers, t-shirts...", "+ 200%"],
+            ["B: Privacy", "Private commission: the work remains secret until agreed date.", "+ 100%"]
+          ]
+        },
+      ],
     }
   };
 
@@ -126,7 +185,7 @@ export function fetchMockedJSON() {
 }
 
 // Private
-const REQUEST_DELAY_MS = 500;
+const REQUEST_DELAY_MS = 100;
 const dataToPromise = (data) => new Promise(function (resolve, reject) {
   setTimeout(() => resolve(data), REQUEST_DELAY_MS);
 });

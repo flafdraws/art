@@ -5,10 +5,12 @@
 
     <Loading :loading="loading" />
     <LoadingFailed v-if="failedToLoad && !loading" @reload="fetchPageData" />
+
     <div v-if="!loading && !failedToLoad">
       <Art v-if="tab == 0" :items="artProjects" />
       <About v-if="tab == 1" :about="about" :loading="loading" />
       <TOS v-if="tab == 2" :tos="tos" />
+      <Prices v-if="tab == 3" :prices="prices" />
     </div>
 
     <br>
@@ -35,6 +37,7 @@ import Loading from './components/Loading.vue';
 import { computed } from '@vue/reactivity';
 import LoadingFailed from './components/LoadingFailed.vue';
 import TOS from './components/TOS.vue';
+import Prices from './components/Prices.vue';
 
 
 const isLoaded = ref(false);
@@ -53,6 +56,10 @@ const tos = ref({
   header: "TERMS OF SERVICE",
   body: {}
 });
+const prices = ref({
+  header: undefined,
+  body: {}
+});
 
 const loading = computed(() => !isLoaded.value );
 
@@ -67,6 +74,7 @@ function fetchPageData() {
       artProjects.value = json.art;
       about.value = json.about;
       tos.value = json.tos;
+      prices.value = json.prices;
       isLoaded.value = true;
     },
     value => {
