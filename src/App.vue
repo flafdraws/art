@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header :banner-src="banner" @keydown.left="keyEvent" />
     <Navbar v-model="tab" class="q-mb-xl" />
 
     <Loading :loading="loading" />
@@ -39,7 +39,9 @@ import LoadingFailed from './components/LoadingFailed.vue';
 import TOS from './components/TOS.vue';
 import Prices from './components/Prices.vue';
 
+const keyEvent = (value) => console.log(value);
 
+const banner = ref("");
 const isLoaded = ref(false);
 const failedToLoad = ref(false);
 const socials = ref([]);
@@ -61,27 +63,27 @@ const prices = ref({
   body: {}
 });
 
-const loading = computed(() => !isLoaded.value );
+const loading = computed(() => !isLoaded.value);
 
 function fetchPageData() {
   isLoaded.value = false;
   failedToLoad.false = false;
   fetchJSON("https://api.npoint.io/6d9469bf770af6892bb8")
-  .then(
-    json =>
-    {
-      socials.value = json.socials;
-      artProjects.value = json.art;
-      about.value = json.about;
-      tos.value = json.tos;
-      prices.value = json.prices;
-      isLoaded.value = true;
-    },
-    value => {
-      failedToLoad.value = true;
-      isLoaded.value = true;
-    }
-  );
+    .then(
+      json => {
+        banner.value = json.banner;
+        socials.value = json.socials;
+        artProjects.value = json.art;
+        about.value = json.about;
+        tos.value = json.tos;
+        prices.value = json.prices;
+        isLoaded.value = true;
+      },
+      value => {
+        failedToLoad.value = true;
+        isLoaded.value = true;
+      }
+    );
 }
 
 fetchPageData();

@@ -1,5 +1,5 @@
 <template>
-  <q-parallax src="https://i.postimg.cc/NfNHvfvk/banner-artstation.png" :height="bannerHeight">
+  <q-parallax :src="bannerSrc" :height="bannerHeight">
     <p class="banner header-minor q-pa-none q-ma-none">Art of</p>
     <p class="banner header-major q-pa-none q-ma-none">Flaf</p>
   </q-parallax>
@@ -8,6 +8,13 @@
 <script setup>
 import { computed } from '@vue/reactivity';
 import { Screen } from 'quasar';
+
+const props = defineProps({
+  bannerSrc: {
+    type: String,
+    default: ""
+  }
+});
 
 const bannerHeight = computed(() => {
   return Math.min(Screen.height * 0.4, 450);

@@ -3,30 +3,31 @@
     <h3 v-if="htmlText.header && htmlText.header !== ''">{{ htmlText.header }}</h3>
     <div class="flex column flex-start content q-mx-md">
       <div v-for="(item, i) in htmlText.body" :key="i"
-        :class="`${item.type} ${item.type == 'h4' ? 'self-center' : ''}`">
-        <span v-if="item.type == 'span'">{{ item.content }}</span>
-        <span v-else-if="item.type == 'format'" v-html="item.content"></span>
-        <h5 v-else-if="item.type == 'h5'">
+        :class="`${item.type} ${item.type === 'h4' ? 'self-center' : ''}`">
+        <span v-if="item.type === 'span'">{{ item.content }}</span>
+        <span v-else-if="item.type === 'format'" v-html="item.content"></span>
+        <h5 v-else-if="item.type === 'h5'">
           <q-icon v-if="item.icon" :name="item.icon" :color="item.iconColor"></q-icon>
           {{ item.content }}
         </h5>
-        <h6 v-else-if="item.type == 'h6'" class="text-grey-5">{{ item.content }}</h6>
-        <h4 v-else-if="item.type == 'h4'">{{ item.content }}</h4>
-        <ul v-else-if="item.type == 'ul'">
+        <h6 v-else-if="item.type === 'h6'" class="text-grey-5">{{ item.content }}</h6>
+        <h4 v-else-if="item.type === 'h4'">{{ item.content }}</h4>
+        <ul v-else-if="item.type === 'ul'">
           <li v-for="(li, j) in item.content" :key="j" v-html="li"></li>
         </ul>
-        <ol v-else-if="item.type == 'ol'">
+        <ol v-else-if="item.type === 'ol'">
           <li v-for="(li, j) in item.content" :key="j" v-html="li"></li>
         </ol>
-        <div v-else-if="item.type == 'breadcrumbs'" class="flex column flex-center text-white q-my-sm">
+        <div v-else-if="item.type === 'breadcrumbs'" class="flex column flex-center text-white q-my-sm">
           <div v-for="(el, j) in item.content" :key="j" class="flex column flex-center">
             <q-icon v-if="j > 0" size="15px" name="arrow_downward" color="grey-7 q-my-xs" />
             <span>{{ el }}</span>
           </div>
         </div>
-        <div v-else-if="item.type == 'table'" class="flex flex-center q-my-md">
+        <div v-else-if="item.type === 'table'" class="flex flex-center q-my-md">
           <Table :rows="item.content" />
         </div>
+        <Gallery v-else-if="item.type === 'gallery'" :items="item.content" />
       </div>
     </div>
   </div>
@@ -35,6 +36,7 @@
 
 <script setup>
 import Table from "./Table.vue";
+import Gallery from "./Gallery.vue";
 
 const props = defineProps({
   htmlText: {

@@ -1,26 +1,37 @@
 <template>
-  <ul class="q-mx-xs image-gallery q-ma-lg">
-    <li v-for="(item, i) in items" :key="i">
-      <img :src="item.thumb" :alt="item.title" />
-    </li>
-  </ul>
+  <div>
+    <ul class="q-mx-xs image-gallery q-ma-lg">
+      <li v-for="(item, i) in items" :key="i">
+        <img :name="i" :src="item.thumb" :alt="item.title" @click="onItemClick(i)" />
+      </li>
+    </ul>
+
+    <dialog-gallery v-model="currentIndex" :items="items" :show="showDialog" @update:show="showDialog = $event" />
+  </div>
 </template>
 
 
 <script setup>
+import { ref } from "vue";
+import DialogGallery from './DialogGallery.vue';
+
 const props = defineProps({
   items: {
     type: Array,
     default: () => []
   }
 });
+
+const currentIndex = ref(-1);
+const showDialog = ref(false);
+
+const onItemClick = (value) => {
+  currentIndex.value = value;
+  showDialog.value = true;
+};
 </script>
 
 <style scoped>
-.loading {
-  height: 80vh;
-}
-
 .image-gallery {
   display: flex;
   flex-wrap: wrap;
