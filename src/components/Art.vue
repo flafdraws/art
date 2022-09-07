@@ -1,12 +1,17 @@
 <template>
   <div>
-    <ul class="q-mx-xs image-gallery q-mb-lg">
-      <li v-for="(item, i) in items" :key="i">
+    <ul class="q-mx-xs gallery q-mb-lg">
+      <li v-for="(item, i) in items" :key="i" class="gallery-item">
         <img :name="i" :src="item.thumb" :alt="item.title" @click="onItemClick(i)" />
+        <div class="item-fade flex justify-center items-end no-pointer">
+          <span class="gallery-item-text">
+            {{ item.title }}
+          </span>
+        </div>
       </li>
     </ul>
 
-    <dialog-gallery v-model="currentIndex" :items="items" :show="showDialog" @update:show="showDialog = $event" />
+    <DialogGallery v-model="currentIndex" :items="items" :show="showDialog" @update:show="showDialog = $event" />
   </div>
 </template>
 
@@ -32,7 +37,7 @@ const onItemClick = (value) => {
 </script>
 
 <style scoped>
-.image-gallery {
+.gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -41,13 +46,29 @@ const onItemClick = (value) => {
   padding-inline-start: 0;
 }
 
-.image-gallery>li {
+.gallery-item {
   height: 40vh;
   cursor: pointer;
   position: relative;
+  overflow: hidden;
+
+  @media (max-aspect-ratio: 1/1) {
+    width: 100vw;
+    height: auto;
+  }
+
+  @media (max-height: 480px) {
+    width: auto;
+    height: 70vh;
+  }
+
+  @media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+    width: 90vw;
+    height: auto;
+  }
 }
 
-.image-gallery li img {
+.gallery-item img {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -55,44 +76,41 @@ const onItemClick = (value) => {
 }
 
 /* 
-.image-gallery li img:hover {
+.gallery li img:hover {
   transform: scale(1.2);
   transition: all .25s ease-in-out;
   z-index: 2000;
 } */
 
-
-@media (max-aspect-ratio: 1/1) {
-  .image-gallery>li {
-    width: 100vw;
-    height: auto;
-  }
+.no-pointer {
+  pointer-events: none;
 }
 
-@media (max-height: 480px) {
-  .image-gallery>li {
-    width: auto;
-    height: 70vh;
-  }
-}
-
-@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
-  .image-gallery>li {
-    width: 90vw;
-    height: auto;
-  }
-}
-
-.description {
-  position: relative;
+.item-fade {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
   transition: opacity .2s ease-in-out;
 }
 
-.description:hover {
+.gallery-item:hover .item-fade {
   opacity: 1;
+}
+
+.gallery-item-text {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  transform: translateY(150%);
+  transition: transform 0.2s ease-in-out;
+}
+
+.gallery-item:hover .gallery-item-text {
+  transform: translateY(0);
+  transition: transform 0.2s ease-in-out;
 }
 </style>
   
