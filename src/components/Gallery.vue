@@ -2,6 +2,9 @@
   <div class="gallery">
     <div v-for="(item, i) in items" :key="i" class="gallery-item">
       <img :src="item.thumb" @click="onItemClick(i)" />
+      <div class="flex flex-center item-fade no-pointer">
+        <q-icon name="mdi-magnify" size="xl" />
+      </div>
     </div>
 
     <dialog-gallery v-model="currentIndex" :items="items" :show.sync="showDialog" @update:show="showDialog = $event" />
@@ -68,5 +71,24 @@ const props = defineProps({
 
 .no-scroll {
   overflow: hidden;
+}
+
+.no-pointer {
+  pointer-events: none;
+}
+
+.item-fade {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+.gallery-item:hover .item-fade {
+  opacity: 1;
 }
 </style>
