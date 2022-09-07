@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header :banner-src="banner" @keydown.left="keyEvent" />
-    <Navbar v-model="tab" class="q-mb-xl" />
+    <Navbar v-model="tab" />
 
     <Loading :loading="loading" />
     <LoadingFailed v-if="failedToLoad && !loading" @reload="fetchPageData" />

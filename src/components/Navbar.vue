@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="navbar">
     <div class="flex flex-center xs">
       <q-btn :icon="mobileMenuIcon" :label="mobileMenuLabel" @click="toggleMobileVisility" size="lg" flat square
         class="fluid" />
@@ -43,6 +43,14 @@ function updateValue(value) {
 </script>
 
 <style scoped lang="scss">
+.navbar {
+  margin-bottom: 48px;
+
+  @media (max-aspect-ratio: 1/1) {
+    margin-bottom: 24px;
+  }
+}
+
 .inactive {
   color: $disabled;
 }
