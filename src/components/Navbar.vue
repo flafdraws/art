@@ -19,27 +19,36 @@
 import { ref, computed } from 'vue';
 import { Screen } from 'quasar';
 
+// Refs
 const modelValue = ref(0);
 const mobileMenuExpanded = ref(false);
-const mobileMenuIcon = computed(() => mobileMenuExpanded.value ? 'mdi-chevron-up' : 'mdi-menu');
-const mobileMenuLabel = computed(() => mobileMenuExpanded.value ? '' : 'Menu');
-const menuClass = computed(() => {
-  return Screen.xs ? `mobileMenu ${mobileMenuExpanded.value ? '' : 'shrink'}` : '';
-});
-const toggleMobileVisility = () => { mobileMenuExpanded.value = !mobileMenuExpanded.value }
-
 const tabs = ref([
   { label: "Art", icon: "mdi-brush" },
   { label: "About", icon: "mdi-account-circle" },
   { label: "TOS", icon: "mdi-file-document" },
   { label: "Prices", icon: "mdi-currency-usd" },
   { label: "Order", icon: "mdi-cart" }
-])
+]);
 
+// Computed
+const mobileMenuIcon = computed(() => mobileMenuExpanded.value ? 'mdi-chevron-up' : 'mdi-menu');
+const mobileMenuLabel = computed(() => mobileMenuExpanded.value ? '' : 'Menu');
+const menuClass = computed(() => {
+  return Screen.xs ? `mobileMenu ${mobileMenuExpanded.value ? '' : 'shrink'}` : '';
+});
+
+// Methods
+const toggleMobileVisility = () => { mobileMenuExpanded.value = !mobileMenuExpanded.value }
+
+// Emits
 const emit = defineEmits(['update:modelValue']);
 function updateValue(value) {
-  emit('update:modelValue', modelValue.value);
+  modelValue.value = value;
+  emit('update:modelValue', value);
 }
+
+// Exposes
+defineExpose({ updateValue });
 </script>
 
 <style scoped lang="scss">

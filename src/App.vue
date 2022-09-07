@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header :banner-src="banner" @keydown.left="keyEvent" />
-    <Navbar v-model="tab" />
+    <Navbar ref="nav" v-model="tab" />
 
     <Loading :loading="loading" />
     <LoadingFailed v-if="failedToLoad && !loading" @reload="fetchPageData" />
@@ -24,7 +24,7 @@
 
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { fetchJSON } from './fetch'
 import Art from './components/Art.vue';
 import Socials from './components/Socials.vue';
@@ -41,11 +41,12 @@ import Prices from './components/Prices.vue';
 
 const keyEvent = (value) => console.log(value);
 
+const nav = ref(null);
 const banner = ref("");
 const isLoaded = ref(false);
 const failedToLoad = ref(false);
 const socials = ref([]);
-const tab = ref(0);
+const tab = ref(4);
 const artProjects = ref([]);
 const about = ref({
   name: "",
@@ -87,6 +88,7 @@ function fetchPageData() {
 }
 
 fetchPageData();
+onMounted(() => nav.value.updateValue(tab.value));
 </script>
 
 
