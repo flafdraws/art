@@ -27,7 +27,7 @@ const tabs = ref([
   { label: "About", icon: "mdi-account-circle" },
   { label: "TOS", icon: "mdi-file-document" },
   { label: "Prices", icon: "mdi-currency-usd" },
-  { label: "Order", icon: "mdi-cart" }
+  { label: "Buy", icon: "mdi-cart" }
 ]);
 
 // Computed

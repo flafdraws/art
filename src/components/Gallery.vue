@@ -21,19 +21,7 @@ const currentIndex = ref(-1);
 
 const onItemClick = (itemIndex) => {
   currentIndex.value = itemIndex;
-  setDialogVisible(true);
-}
-const setPageScroll = (enabled) => {
-  if (enabled) {
-    document.body.classList.add("no-scroll");
-  }
-  else {
-    document.body.classList.remove("no-scroll");
-  }
-}
-const setDialogVisible = (visible) => {
-  showDialog.value = visible;
-  setPageScroll(visible);
+  showDialog.value = true;
 }
 
 const props = defineProps({

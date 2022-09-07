@@ -17,7 +17,7 @@
 
 <script setup>
 import { computed } from '@vue/reactivity';
-import { onBeforeUnmount, onMounted } from 'vue';
+import { onBeforeUnmount, onMounted, watch } from 'vue';
 
 const props = defineProps({
   modelValue: {
@@ -41,12 +41,12 @@ const updateValue = function (value) {
 const updateShow = function (value) {
   emit('update:show', value);
 }
+const isShowing = computed(() => props.show);
 
 const currentItem = computed(() => {
   return props.modelValue >= 0 && props.modelValue < props.items.length ? props.items[props.modelValue].img : null;
 });
 
-const keyEvent = (value) => console.log(value);
 const roundIndex = (index) => {
   let rv = index;
   if (index < 0) rv += props.items.length;
@@ -54,7 +54,6 @@ const roundIndex = (index) => {
   updateValue(rv);
   return rv;
 }
-
 
 const goNext = () => roundIndex(props.modelValue + 1);
 const goPrevious = () => roundIndex(props.modelValue - 1);
@@ -81,6 +80,10 @@ const onKeyUp = (event) => {
 }
 onMounted(() => window.addEventListener('keyup', onKeyUp));
 onBeforeUnmount(() => window.removeEventListener('keyup', onKeyUp));
+
+watch(isShowing, (newValue) => {
+  setPageScroll(newValue);
+});
 </script>
   
 

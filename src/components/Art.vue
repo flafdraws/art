@@ -51,20 +51,19 @@ const onItemClick = (value) => {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+}
 
-  @media (max-aspect-ratio: 1/1) {
-    width: 100vw;
+@media (max-aspect-ratio: 1/1) {
+  .gallery-item {
+    width: 70vw;
     height: auto;
   }
+}
 
-  @media (max-height: 480px) {
+@media (max-height: 480px) {
+  .gallery-item {
     width: auto;
     height: 70vh;
-  }
-
-  @media (max-aspect-ratio: 1/1) and (max-width: 480px) {
-    width: 90vw;
-    height: auto;
   }
 }
 

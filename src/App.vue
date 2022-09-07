@@ -46,7 +46,7 @@ const banner = ref("");
 const isLoaded = ref(false);
 const failedToLoad = ref(false);
 const socials = ref([]);
-const tab = ref(4);
+const tab = ref(0);
 const artProjects = ref([]);
 const about = ref({
   name: "",
