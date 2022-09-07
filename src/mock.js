@@ -117,7 +117,7 @@ export function fetchMockedJSON() {
         * Additional fees do stack by <b>sum</b>, not by multiplying - they are applied to the base price always. E.g.:"
         },
         { type: "format", content: "<b>Correct</b><br>A1 + B = Base + 50% + 100% = +150% = x 2.5" },
-        { type: "format", content: "<b>Wrong</b><br>A1 + B = Base x 1.5 x 2 = x 3 = + 200%." },
+        { type: "format", content: "<b>Wrong</b><br>A1 + B = Base x 1.5 x 2 = x 3 = +200%." },
       ]
     },
     prices: {
