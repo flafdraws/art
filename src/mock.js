@@ -4,21 +4,21 @@
  * ======================================================== */
 export function fetchMockedJSON() {
   const data = {
-    banner: "https://i.postimg.cc/NfNHvfvk/banner-artstation.png",
+    banner: "https://raw.githubusercontent.com/flafdraws/gallery/main/banner/farm-girl.png",
     art: [
-      { title: "Mood (study)", "date": "2022/05/03", thumb: "https://i.postimg.cc/N0btdrSs/mood2.png", img: "https://i.postimg.cc/N0btdrSs/mood2.png" },
-      { title: "Farm Girl (study)", "date": "2022/05/03", thumb: "https://i.postimg.cc/mks0RL0X/Blob-Paint1920.png", img: "https://i.postimg.cc/mks0RL0X/Blob-Paint1920.png" },
-      { title: "Lumiel - Portrait (OC Redesigned)", "date": "2021/10/23", thumb: "https://cdna.artstation.com/p/assets/images/images/042/644/882/small/flavio-freitas-lumiel-portrait-1920.jpg?1635087313", img: "https://cdna.artstation.com/p/assets/images/images/042/644/882/large/flavio-freitas-lumiel-portrait-1920.jpg?1635087313" },
-      { title: "Lake at night (study)", "date": "2022/05/02", thumb: "https://i.postimg.cc/Vv1k7wZc/bands2-2.png", img: "https://i.postimg.cc/Vv1k7wZc/bands2-2.png" },
-      { title: "Random doodle", "date": "2022/06/27", thumb: "https://i.postimg.cc/rwHPm1mw/polishing-sketch.png", img: "https://i.postimg.cc/rwHPm1mw/polishing-sketch.png" },
-      { title: "Style exploration", "date": "2022/06/13", thumb: "https://i.postimg.cc/5NnGcdWv/size-bust.png", img: "https://i.postimg.cc/5NnGcdWv/size-bust.png" },
-      { title: "Enpitsu, the art bender", "date": "2021/02/28", thumb: "https://cdnb.artstation.com/p/assets/images/images/035/424/627/small/flavio-freitas-flaf-enpitsu2-fhd.jpg?1614910695", img: "https://cdnb.artstation.com/p/assets/images/images/035/424/627/large/flavio-freitas-flaf-enpitsu2-fhd.jpg?1614910695" },
-      { title: "Sword Girls 1", "date": "2022/03/16", thumb: "https://cdnb.artstation.com/p/assets/images/images/047/874/387/small/flavio-freitas-sword-girl-1.jpg?1648651512", img: "https://cdnb.artstation.com/p/assets/images/images/047/874/387/large/flavio-freitas-sword-girl-1.jpg?1648651512" },
-      { title: "Sword Girls 2", "date": "2022/03/17", thumb: "https://cdna.artstation.com/p/assets/images/images/047/874/392/small/flavio-freitas-sword-girl-2.jpg?1648651517", img: "https://cdna.artstation.com/p/assets/images/images/047/874/392/large/flavio-freitas-sword-girl-2.jpg?1648651517" },
-      { title: "Sword Girls 3", "date": "2022/03/18", thumb: "https://cdnb.artstation.com/p/assets/images/images/047/874/393/small/flavio-freitas-sword-girl-3.jpg?1648651524", img: "https://cdnb.artstation.com/p/assets/images/images/047/874/393/large/flavio-freitas-sword-girl-3.jpg?1648651524" },
-      { title: "Sword Girls 4", "date": "2022/03/19", thumb: "https://cdnb.artstation.com/p/assets/images/images/047/874/403/small/flavio-freitas-sword-girl-4.jpg?1648651531", img: "https://cdnb.artstation.com/p/assets/images/images/047/874/403/large/flavio-freitas-sword-girl-4.jpg?1648651531" },
-      { title: "Sword Girls 5", "date": "2022/03/20", thumb: "https://cdna.artstation.com/p/assets/images/images/047/874/408/small/flavio-freitas-sword-girl-5.jpg?1648651537", img: "https://cdna.artstation.com/p/assets/images/images/047/874/408/large/flavio-freitas-sword-girl-5.jpg?1648651537" },
-      { title: "Sword Girls 6", "date": "2022/03/21", thumb: "https://cdnb.artstation.com/p/assets/images/images/047/874/369/small/flavio-freitas-sword-girl-6.jpg?1648651494", img: "https://cdnb.artstation.com/p/assets/images/images/047/874/369/large/flavio-freitas-sword-girl-6.jpg?1648651494" },
+      { title: "Mood (study)", "date": "2022/05/03", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/mood.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/mood.png" },
+      { title: "Farm Girl (study)", "date": "2022/05/03", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/farm-girl.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/farm-girl.png" },
+      { title: "Lumiel - Portrait (OC Redesigned)", "date": "2021/10/23", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/lumiel-avatar.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/lumiel-avatar.png" },
+      { title: "Lake at night (study)", "date": "2022/05/02", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/lake-night.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/lake-night.png" },
+      { title: "Random doodle", "date": "2022/06/27", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/doodle.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/doodle.png" },
+      { title: "Style exploration", "date": "2022/06/13", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/style-exploration.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/style-exploration.png" },
+      { title: "Enpitsu, the art bender", "date": "2021/02/28", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/enpitsu.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/enpitsu.png" },
+      { title: "Sword Girls 1", "date": "2022/03/16", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-1.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-1.png" },
+      { title: "Sword Girls 2", "date": "2022/03/17", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-2.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-2.png" },
+      { title: "Sword Girls 3", "date": "2022/03/18", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-3.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-3.png" },
+      { title: "Sword Girls 4", "date": "2022/03/19", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-4.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-4.png" },
+      { title: "Sword Girls 5", "date": "2022/03/20", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-5.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-5.png" },
+      { title: "Sword Girls 6", "date": "2022/03/21", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-6.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-6.png" },
     ],
     socials: [
       { show: true, name: "ArtStation", icon: "mdi-artstation", color: "blue", href: "https://artstation.com/flafdraws" },
@@ -146,9 +146,9 @@ export function fetchMockedJSON() {
         },
         {
           type: "gallery", content: [
-            { thumb: "https://i.postimg.cc/5NnGcdWv/size-bust.png", img: "https://i.postimg.cc/5NnGcdWv/size-bust.png" },
-            { thumb: "https://cdnb.artstation.com/p/assets/images/images/047/874/369/small/flavio-freitas-sword-girl-6.jpg?1648651494", img: "https://cdnb.artstation.com/p/assets/images/images/047/874/369/large/flavio-freitas-sword-girl-6.jpg?1648651494" },
-            { thumb: "https://i.postimg.cc/N0btdrSs/mood2.png", img: "https://i.postimg.cc/N0btdrSs/mood2.png" }
+            { thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/style-exploration.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/style-exploration.png" },
+            { thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-6.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-6.png" },
+            { thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/mood.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/mood.png" },
           ]
         },
         { type: "mega-spacer", content: null },
@@ -165,7 +165,7 @@ export function fetchMockedJSON() {
         },
         {
           type: "gallery", content: [
-            { thumb: "https://i.postimg.cc/Vv1k7wZc/bands2-2.png", img: "https://i.postimg.cc/Vv1k7wZc/bands2-2.png" }
+            { thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/lake-night.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/lake-night.png" },
           ]
         },
         { type: "big-spacer", content: null },
