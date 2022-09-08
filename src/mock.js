@@ -199,29 +199,36 @@ export function fetchMockedJSON() {
         nickname: {
           name: "entry.1187263954",
           value: "",
-          label: "Casual Name or Nickname",
+          label: "Casual Name",
           placeholder: "Johnny",
-          hint: "For addressing purposes only."
+          hint: "* Casual name or nickname for addressing purposes only."
         },
         email: {
           name: "entry.1383363498",
           value: "",
           label: "E-mail",
           placeholder: "johndoe@mail.com",
-          hint: "Artwork will be sent to this mailbox."
+          hint: "* Artwork will be sent to this mailbox!"
         },
         social: {
           name: "entry.1956441675",
           value: "",
           label: "Social Media",
           placeholder: "@johndoe (Twitter)",
-          hint: "Your @handle to DM for contact (Twitter, Discord, Twitch...)?"
+          hint: "* Your @handle to DM for contact (Twitter, Discord, Twitch...)?"
         },
       },
       commission: {
         size: {
           name: "",
           value: "",
+          options: [
+            { value: "Icon", label: "Icon", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/ui/size-icon.png" },
+            { value: "Bust", label: "Bust", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/style-exploration.png" },
+            { value: "Half-body", label: "Half-body", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-6.png" },
+            { value: "Full-body", label: "Full-body", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-3.png" },
+            { value: "Big", label: "Big", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/ui/size-big.png" }
+          ]
         }
       },
       notes: {

@@ -2,7 +2,7 @@
   <div class="flex column flex-center q-mx-md">
     <div class="flex column flex-start content">
 
-      <q-form @submit="submitCommission" :action="buy.formUrl" method="post" target="_blank">
+      <q-form @submit="clearCommission" :action="buy.formUrl" method="post" target="_blank">
 
         <h4>COMMISSION FORM</h4>
         <div class="mega-spacer"></div>
@@ -14,6 +14,8 @@
         <div class="mega-spacer"></div>
 
         <h5>Commission Details</h5>
+        <RadioCards v-model="buy.commission.size.value" :options="buy.commission.size.options" />
+
         <BuyButton :disable="!isFormValid" />
       </q-form>
 
@@ -31,6 +33,7 @@ import { computed } from '@vue/reactivity';
 import InputText from './InputText.vue';
 import BuyNotes from './BuyNotes.vue';
 import BuyButton from "./BuyButton.vue";
+import RadioCards from "./RadioCards.vue";
 
 const props = defineProps({
   buy: {
@@ -61,7 +64,13 @@ const props = defineProps({
           hint: ""
         },
       },
-      commission: {}
+      commission: {
+        size: {
+          name: "",
+          value: "",
+          options: []
+        }
+      }
     })
   }
 });
@@ -84,6 +93,8 @@ const isFormValid = computed(() => {
   }
   return true;
 });
+
+const clearCommission = () => { }
 </script>
 
 
