@@ -11,6 +11,7 @@
       <About v-if="tab == 1" :about="about" :loading="loading" />
       <TOS v-if="tab == 2" :tos="tos" />
       <Prices v-if="tab == 3" :prices="prices" />
+      <Buy v-if="tab == 4" :buy="buy" />
     </div>
 
     <br>
@@ -26,18 +27,19 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { fetchJSON } from './fetch'
-import Art from './components/Art.vue';
+import { computed } from '@vue/reactivity';
 import Socials from './components/Socials.vue';
 import Header from './components/Header.vue';
 import Navbar from './components/Navbar.vue';
 import Footer from './components/Footer.vue';
-import ScrollButton from './components/ScrollButton.vue';
-import About from './components/About.vue';
 import Loading from './components/Loading.vue';
-import { computed } from '@vue/reactivity';
 import LoadingFailed from './components/LoadingFailed.vue';
+import ScrollButton from './components/ScrollButton.vue';
+import Art from './components/Art.vue';
+import About from './components/About.vue';
 import TOS from './components/TOS.vue';
 import Prices from './components/Prices.vue';
+import Buy from './components/Buy.vue';
 
 const keyEvent = (value) => console.log(value);
 
@@ -48,21 +50,10 @@ const failedToLoad = ref(false);
 const socials = ref([]);
 const tab = ref(0);
 const artProjects = ref([]);
-const about = ref({
-  name: "",
-  title: "",
-  contact: [],
-  text: [],
-  thanks: ""
-});
-const tos = ref({
-  header: "TERMS OF SERVICE",
-  body: {}
-});
-const prices = ref({
-  header: undefined,
-  body: {}
-});
+const about = ref();
+const tos = ref();
+const prices = ref();
+const buy = ref();
 
 const loading = computed(() => !isLoaded.value);
 
@@ -78,6 +69,7 @@ function fetchPageData() {
         about.value = json.about;
         tos.value = json.tos;
         prices.value = json.prices;
+        buy.value = json.buy;
         isLoaded.value = true;
       },
       value => {

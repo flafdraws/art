@@ -191,6 +191,52 @@ export function fetchMockedJSON() {
           ]
         },
       ],
+    },
+    buy: {
+      fees: {},
+      formUrl: "https://docs.google.com/forms/u/2/d/e/1FAIpQLSdTIue8l5zYda8oF7SYjK0tIZSZ3Ibg6ZTn4N-MUcP6xv4OGg/formResponse",
+      customer: {
+        nickname: {
+          name: "entry.1187263954",
+          value: "",
+          label: "Casual Name or Nickname",
+          placeholder: "Johnny",
+          hint: "For addressing purposes only."
+        },
+        email: {
+          name: "entry.1383363498",
+          value: "",
+          label: "E-mail",
+          placeholder: "johndoe@mail.com",
+          hint: "Artwork will be sent to this mailbox."
+        },
+        social: {
+          name: "entry.1956441675",
+          value: "",
+          label: "Social Media",
+          placeholder: "@johndoe (Twitter)",
+          hint: "Your @handle to DM for contact (Twitter, Discord, Twitch...)?"
+        },
+      },
+      commission: {
+        size: {
+          name: "",
+          value: "",
+        }
+      },
+      notes: {
+        header: undefined,
+        body: [
+          { type: "h5", content: "Notes", icon: "mdi-comment-alert", iconColor: "warning" },
+          {
+            type: "ul", content: [
+              "Everything is negotiable - <i>\"Dormammu, I've come to bargain\"</i>",
+              "All prices listed here are <b>estimated</b> and may change based on multiple factors (e.g.: character detail, scene detail, render level).",
+              "Prices are <b>limited time offers</b> and are not guaranteed to stay the same in the future.",
+            ]
+          },
+        ]
+      }
     }
   };
 
