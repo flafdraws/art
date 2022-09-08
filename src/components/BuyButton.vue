@@ -12,10 +12,7 @@
 
 <script setup>
 const props = defineProps({
-  disable: {
-    type: Boolean,
-    default: false
-  }
+  disable: { type: Boolean, default: false }
 });
 </script>
 

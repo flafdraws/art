@@ -1,7 +1,8 @@
 <template>
   <div class="flex flex-center">
     <q-btn round icon="mdi-chevron-up" color="primary" class="text-black" @click="scrollToTop">
-      <q-tooltip anchor="top middle" self="bottom middle" class="bg-primary text-weight-bold text-black">Back to top
+      <q-tooltip anchor="top middle" self="bottom middle" class="bg-primary text-caption text-weight-bold text-black">
+        Back to top
       </q-tooltip>
     </q-btn>
   </div>

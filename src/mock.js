@@ -98,12 +98,13 @@ export function fetchMockedJSON() {
         { type: "h5", content: "License" },
         { type: "h6", content: "(Default: Personal)" },
         { type: "span", content: "The client has the right to use the commission for their personal usage, this includes but not limited to print for personal display, wallpaper, posted as profile icons on websites/social medias as long as they give proper credits to the artist. The artist retains the commercial use licenses of the work unless negotiated otherwise." },
+        { type: "span", content: "Personal Profile Picture or Forum Signature usage does not require crediting the artist." },
         { type: "mega-spacer", content: null },
 
         { type: "h4", content: "COMMERCIAL USE LICENSES" },
         { type: "h5", content: "Usage" },
         { type: "span", content: "The purchaser of commercial use licenses have the rights to use the commission as merchandise to sell, promote, distribute, produce and for any other commercial purposes as long as they don't involve modifying the product or impacting negatively the artist." },
-        { type: "span", content: "If you want to re-sell artworks or use them as assets within any sort of application, contact me for a personalized negotiation." },
+        { type: "format", content: "Commercial licensing prices are listed in the <b>Prices Tab</b>. If none of the licenses listed there fit your needs, contact me for a personalized negotiation." },
         { type: "big-spacer", content: null },
 
         { type: "h5", content: "Credits" },
@@ -220,8 +221,10 @@ export function fetchMockedJSON() {
       },
       commission: {
         size: {
-          name: "",
+          name: "entry.944257849",
           value: "",
+          label: "Size",
+          hint: "* Multiple characters = Big size",
           options: [
             { value: "Icon", label: "Icon", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/ui/size-icon.png" },
             { value: "Bust", label: "Bust", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/style-exploration.png" },
@@ -229,7 +232,51 @@ export function fetchMockedJSON() {
             { value: "Full-body", label: "Full-body", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-3.png" },
             { value: "Big", label: "Big", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/ui/size-big.png" }
           ]
-        }
+        },
+        polishing: {
+          name: "entry.1763770804",
+          value: "",
+          label: "Polishing Level",
+          hint: "",
+          options: [
+            { value: "Line Art", label: "Line Art / Sketch", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/doodle.png" },
+            { value: "Painting", label: "Painting", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/farm-girl.png" },
+          ]
+        },
+        background: {
+          name: "entry.1525019333",
+          value: "",
+          label: "Background",
+          hint: "",
+          options: [
+            { value: "Single Color / Gradient", label: "Single Color / Gradient", img: "" },
+            { value: "Abstract Design", label: "Abstract Design", img: "" },
+            { value: "Simple Environment", label: "Simple Environment", img: "" },
+            { value: "Complex Scene", label: "Complex Scene", img: "" },
+          ]
+        },
+        license: {
+          name: "entry.1568503269",
+          value: "",
+          label: "License",
+          hint: "For what purpose would you use the artwork?<br>* Please refer to <b>TOS</b> and <b>Prices</b> tabs for more details.",
+          options: [
+            { value: "A0 - Personal Use", label: "A0 - Personal Use", tooltip: "Profile pic, D&D campaign, wallpaper...", img: "" },
+            { value: "A1 - Branding", label: "A1 - Branding", tooltip: "Youtube, Twitch, influencer, webpage...", img: "" },
+            { value: "A2 - Indirect Merch", label: "A2 - Indirect Merch", tooltip: "Book covers, game assets...", img: "" },
+            { value: "A3 - Direct Merch", label: "A3 - Direct Merch", tooltip: "Keychains, mugs, t-shirts...", img: "" },
+          ]
+        },
+        privacy: {
+          name: "entry.1553002815",
+          value: "",
+          label: "Privacy",
+          hint: "",
+          options: [
+            { value: "Public", label: "Public", tooltip: "The commission can be shown.", img: "" },
+            { value: "Private", label: "Private", tooltip: "The commission cannot be disclosed for an agreed period.", img: "" },
+          ]
+        },
       },
       notes: {
         header: undefined,

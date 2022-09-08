@@ -1,9 +1,9 @@
 <template>
   <q-input v-model="modelValue.value" :label="modelValue.label" :placeholder="modelValue.placeholder"
-    :hint="modelValue.hint" hide-hint @update:model-value="updateModel" :rules="rules" :maxlength="64" class="inputText"
-    clearable counter>
+    :hint="modelValue.hint" hide-hint @update:model-value="updateModel" :rules="rules" :maxlength="maxlength"
+    class="inputText" clearable counter>
     <template v-slot:prepend v-if="isRequired">
-      <q-icon name="mdi-check-circle" :class="`mr-2 checkIcon ${isValid > 0 ? 'active' : ''}`">
+      <q-icon name="mdi-check-circle" :class="`checkIcon ${isValid > 0 ? 'active' : ''}`">
       </q-icon>
     </template>
   </q-input>
@@ -17,14 +17,14 @@ const props = defineProps({
   modelValue: {
     type: Object,
     default: () => ({
-      name: "",
-      value: "",
-      label: "",
-      placeholder: "",
-      hint: "",
-      maxlength: 64
+      name: { type: String, default: "" },
+      value: { type: String, default: "" },
+      label: { type: String, default: "" },
+      placeholder: { type: String, default: "" },
+      hint: { type: String, default: "" },
     })
   },
+  maxlength: { type: Number, default: 64 },
   rules: {
     type: Array,
     default: () => ([])

@@ -8,13 +8,23 @@
         <div class="mega-spacer"></div>
 
         <h5>Contact Info</h5>
-        <InputText ref="nameInput" v-model="buy.customer.nickname" :rules="nameRules" />
-        <InputText ref="emailInput" v-model="buy.customer.email" :rules="emailRules" />
-        <InputText v-model="buy.customer.social" />
+        <InputText ref="nameInput" v-model="customer.nickname" :rules="nameRules" :maxlength="64" />
+        <InputText ref="emailInput" v-model="customer.email" :rules="emailRules" :maxlength="64" />
+        <InputText v-model="customer.social" :maxlength="64" />
         <div class="mega-spacer"></div>
 
         <h5>Commission Details</h5>
-        <RadioCards v-model="buy.commission.size.value" :options="buy.commission.size.options" />
+        <div class="spacer"></div>
+        <RadioCards ref="sizeInput" v-model="commission.size.value" :options="commission.size.options"
+          :label="commission.size.label" :hint="commission.size.hint" />
+        <RadioCards ref="polishingInput" v-model="commission.polishing.value" :options="commission.polishing.options"
+          :label="commission.polishing.label" :hint="commission.polishing.hint" />
+        <RadioCards ref="backgroundInput" v-model="commission.background.value" :options="commission.background.options"
+          :label="commission.background.label" :hint="commission.background.hint" />
+        <RadioCards ref="licenseInput" v-model="commission.license.value" :options="commission.license.options"
+          :label="commission.license.label" :hint="commission.license.hint" />
+        <RadioCards ref="privacyInput" v-model="commission.privacy.value" :options="commission.privacy.options"
+          :label="commission.privacy.label" :hint="commission.privacy.hint" />
 
         <BuyButton :disable="!isFormValid" />
       </q-form>
@@ -30,6 +40,7 @@
 <script setup>
 import { ref } from "vue";
 import { computed } from '@vue/reactivity';
+import { Default } from "../default";
 import InputText from './InputText.vue';
 import BuyNotes from './BuyNotes.vue';
 import BuyButton from "./BuyButton.vue";
@@ -39,53 +50,30 @@ const props = defineProps({
   buy: {
     type: Object,
     default: () => ({
-      fees: {},
-      formUrl: "",
-      customer: {
-        nickname: {
-          name: "",
-          value: "",
-          label: "",
-          placeholder: "",
-          hint: ""
-        },
-        email: {
-          name: "",
-          value: "",
-          label: "",
-          placeholder: "",
-          hint: ""
-        },
-        social: {
-          name: "",
-          value: "",
-          label: "",
-          placeholder: "",
-          hint: ""
-        },
-      },
-      commission: {
-        size: {
-          name: "",
-          value: "",
-          options: []
-        }
-      }
+      fees: { type: Object, default: () => ({}) },
+      formUrl: { type: String, default: "" },
+      customer: Default.customer,
+      commission: Default.commission
     })
   }
 });
 
+const customer = computed(() => props.buy.customer);
+const commission = computed(() => props.buy.commission);
+
 const nameInput = ref(null);
 const emailInput = ref(null);
+const sizeInput = ref(null);
+const polishingInput = ref(null);
 
-const nameRules = [v => !!v || 'Name is required', v => v.length <= 64 || 'Name must be less than 10 characters',];
+const nameRules = [v => !!v || 'Name is required'];
 const emailRules = [v => !!v || 'E-mail is required', v => /.+@.+\..+/.test(v) || 'E-mail must be valid',];
 const radioRules = [v => !!v || "You must choose an option."];
 const briefingTextRules = [v => !!v || "The job must be described.", v => v.length <= 2000];
 const referenceTextRules = [v => !!v || "We need references to define a goal.", v => v.length <= 1000];
 const paragraphRules = [v => v.length <= 512]
 
-const fieldsToValidate = [nameInput, emailInput];
+const fieldsToValidate = [nameInput, emailInput, sizeInput, polishingInput];
 const isFieldValid = (field) => field.value && field.value.isValid;
 const isFormValid = computed(() => {
   for (const field of fieldsToValidate) {
@@ -141,8 +129,8 @@ h5 {
 }
 
 .spacer {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .big-spacer {

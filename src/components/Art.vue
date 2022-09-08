@@ -74,13 +74,6 @@ const onItemClick = (value) => {
   vertical-align: middle;
 }
 
-/* 
-.gallery li img:hover {
-  transform: scale(1.2);
-  transition: all .25s ease-in-out;
-  z-index: 2000;
-} */
-
 .no-pointer {
   pointer-events: none;
 }
