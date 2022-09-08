@@ -18,6 +18,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { Screen } from 'quasar';
+import { setRouteFromTab } from "../routes";
 
 // Refs
 const modelValue = ref(0);
@@ -43,6 +44,7 @@ const toggleMobileVisility = () => { mobileMenuExpanded.value = !mobileMenuExpan
 // Emits
 const emit = defineEmits(['update:modelValue']);
 function updateValue(value) {
+  setRouteFromTab(value);
   modelValue.value = value;
   emit('update:modelValue', value);
 }

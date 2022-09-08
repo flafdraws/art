@@ -28,6 +28,7 @@
 import { onMounted, ref } from 'vue';
 import { fetchJSON } from './fetch'
 import { computed } from '@vue/reactivity';
+import { getTabFromRoute } from "./routes";
 import Socials from './components/Socials.vue';
 import Header from './components/Header.vue';
 import Navbar from './components/Navbar.vue';
@@ -80,9 +81,23 @@ function fetchPageData() {
 }
 
 fetchPageData();
-onMounted(() => nav.value.updateValue(tab.value));
+onMounted(() => {
+  tab.value = getTabFromRoute();
+  nav.value.updateValue(tab.value)
+});
 </script>
 
+
+<script>
+export default
+  {
+    name: 'App',
+    created() {
+      this.$q.dark.set(true);
+    }
+  }
+</script>
+  
 
 <style scoped>
 .logo {
@@ -99,13 +114,3 @@ onMounted(() => nav.value.updateValue(tab.value));
   filter: drop-shadow(0 0 2em #42b883aa);
 }
 </style>
-
-<script>
-export default
-  {
-    name: 'App',
-    created() {
-      this.$q.dark.set(true);
-    }
-  }
-</script>
