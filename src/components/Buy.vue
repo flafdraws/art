@@ -117,11 +117,11 @@ const isFormValid = computed(() => {
 const clearFields = (fields) => fields?.forEach(field => field.value.clear());
 const clearContact = () => clearFields([nameInput, emailInput, socialInput]);
 const clearCommission = () => clearFields([sizeInput, polishingInput, backgroundInput, licenseInput, privacyInput, briefingInput, referencesInput, commentsInput]);
-const clearCommissionRadioCards = () => clearFields([sizeInput, polishingInput, backgroundInput, licenseInput, privacyInput]);
+const clearCommissionPartially = () => clearFields([sizeInput, polishingInput, backgroundInput]);
 
 const onSubmit = (evt) => {
   evt.target.submit();
-  clearCommissionRadioCards();
+  clearCommissionPartially();
 }
 
 const sumStr = (value) => `+ $${value}`;

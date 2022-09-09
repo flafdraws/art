@@ -196,6 +196,7 @@ export function fetchMockedJSON() {
     buy: {
       fees: {
         size: [
+          [20, 45], // Icon
           [30, 60], // Bust
           [40, 75], // Half-body
           [50, 90], // Full-body
@@ -241,7 +242,8 @@ export function fetchMockedJSON() {
           label: "Size",
           hint: "* Multiple characters = Big size",
           options: [
-            { value: "Bust", label: "Bust", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/ui/size-icon.png" },
+            { value: "Icon", label: "Icon", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/ui/size-icon.png" },
+            { value: "Bust", label: "Bust", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/style-exploration.png" },
             { value: "Half-body", label: "Half-body", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-6.png" },
             { value: "Full-body", label: "Full-body", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-3.png" },
             { value: "Big", label: "Big", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/ui/size-big.png" }
@@ -253,7 +255,7 @@ export function fetchMockedJSON() {
           label: "Polishing Level",
           hint: "",
           options: [
-            { value: "Line Art", label: "Line Art", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/style-exploration.png" },
+            { value: "Line Art", label: "Line Art", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/doodle.png" },
             { value: "Painting", label: "Painting", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/farm-girl.png" },
           ]
         },
