@@ -194,7 +194,22 @@ export function fetchMockedJSON() {
       ],
     },
     buy: {
-      fees: {},
+      fees: {
+        size: [
+          [30, 60], // Bust
+          [40, 75], // Half-body
+          [50, 90], // Full-body
+          [74, 120] // Big
+        ],
+        background: [
+          [0, 0],
+          [10, 20],
+          [30, 50],
+          [60, 90]
+        ],
+        license: [0, 0.5, 1, 2],
+        privacy: [0, 0.5]
+      },
       formUrl: "https://docs.google.com/forms/u/2/d/e/1FAIpQLSdTIue8l5zYda8oF7SYjK0tIZSZ3Ibg6ZTn4N-MUcP6xv4OGg/formResponse",
       customer: {
         nickname: {
@@ -226,8 +241,7 @@ export function fetchMockedJSON() {
           label: "Size",
           hint: "* Multiple characters = Big size",
           options: [
-            { value: "Icon", label: "Icon", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/ui/size-icon.png" },
-            { value: "Bust", label: "Bust", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/style-exploration.png" },
+            { value: "Bust", label: "Bust", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/ui/size-icon.png" },
             { value: "Half-body", label: "Half-body", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-6.png" },
             { value: "Full-body", label: "Full-body", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-3.png" },
             { value: "Big", label: "Big", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/ui/size-big.png" }
@@ -239,7 +253,7 @@ export function fetchMockedJSON() {
           label: "Polishing Level",
           hint: "",
           options: [
-            { value: "Line Art / Sketch", label: "Line Art / Sketch", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/doodle.png" },
+            { value: "Line Art", label: "Line Art", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/style-exploration.png" },
             { value: "Painting", label: "Painting", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/farm-girl.png" },
           ]
         },

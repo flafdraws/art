@@ -4,7 +4,7 @@
       <div class="flex flex-start items-center row no-wrap">
         <q-icon name="mdi-check-circle" size="sm" :class="`checkIcon ${isValid > 0 ? 'active' : ''}`">
         </q-icon>
-        <h5 v-if="label">{{ label }}</h5>
+        <h5 v-if="label">{{ label }}<span v-if="price" class="q-ml-md text-grey-7">({{ price }})</span></h5>
       </div>
       <span v-if="hint" class="hint" v-html="hint"></span>
     </div>
@@ -35,6 +35,7 @@ const props = defineProps({
   label: { type: String, default: "" },
   hint: { type: String, default: undefined },
   options: { type: Array, default: () => ([]) },
+  price: { type: String, default: "" },
 });
 
 const emit = defineEmits(['update:modelValue']);
@@ -43,12 +44,12 @@ const selectCard = (index) => {
   emit('update:modelValue', props.options[index].value);
 }
 const isItemSelected = (item) => props.modelValue === item.value;
-
-const isValid = computed(() => props.options.some(el => el.value === props.modelValue));
-
 const clear = () => emit('update:modelValue', "");
 
-defineExpose({ isValid, clear });
+const isValid = computed(() => props.options.some(el => el.value === props.modelValue));
+const index = computed(() => props.options.findIndex(op => op.value === props.modelValue));
+
+defineExpose({ isValid, clear, index });
 </script>
 
 <style scoped lang="scss">
