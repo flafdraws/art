@@ -7,11 +7,11 @@
     <LoadingFailed v-if="failedToLoad && !loading" @reload="fetchPageData" />
 
     <div v-if="!loading && !failedToLoad">
-      <Art v-if="tab == 0" :items="artProjects" />
-      <About v-if="tab == 1" :about="about" :loading="loading" />
-      <TOS v-if="tab == 2" :tos="tos" />
-      <Prices v-if="tab == 3" :prices="prices" />
-      <Buy v-if="tab == 4" :buy="buy" />
+      <Art v-show="tab == 0" :items="artProjects" />
+      <About v-show="tab == 1" :about="about" :loading="loading" />
+      <TOS v-show="tab == 2" :tos="tos" />
+      <Prices v-show="tab == 3" :prices="prices" />
+      <Buy v-show="tab == 4" :buy="buy" />
     </div>
 
     <br>
