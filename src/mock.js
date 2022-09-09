@@ -317,19 +317,10 @@ export function fetchMockedJSON() {
           placeholder: "",
         },
       },
-      notes: {
-        header: undefined,
-        body: [
-          { type: "h5", content: "Notes", icon: "mdi-comment-alert", iconColor: "warning" },
-          {
-            type: "ul", content: [
-              "Everything is negotiable - <i>\"Dormammu, I've come to bargain\"</i>",
-              "All prices listed here are <b>estimated</b> and may change based on multiple factors (e.g.: character detail, scene detail, render level).",
-              "Prices are <b>limited time offers</b> and are not guaranteed to stay the same in the future.",
-            ]
-          },
-        ]
-      }
+      estimateNotes: "\* This is a rough estimate, prices can vary greatly.<br>\
+      * Everything is negotiable - <i>\"Dormammu, I've come to bargain\"</i>.<br>\
+      * Price estimates for <b>Big Size</b> commissions are less precise.<br>\
+      * I may take a day to reply with the definitive price."
     }
   };
 

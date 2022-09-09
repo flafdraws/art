@@ -6,55 +6,63 @@
         <h4>COMMISSION FORM</h4>
         <div class="mega-spacer"></div>
 
-        <div class="flex flex-start items-center content-center">
-          <h5>Contact Info</h5>
-          <q-btn round flat icon="mdi-delete" class="q-ml-sm" color="negative" @click="clearContact"></q-btn>
-        </div>
+        <BuySectionHeader text="Contact Info" @clear="clearContact" />
+
+        <!-- NAME -->
         <InputText ref="nameInput" v-model="customer.nickname" :rules="nameRules" :maxlength="64" class="q-mb-sm" />
+
+        <!-- EMAIL -->
         <InputText ref="emailInput" v-model="customer.email" :rules="emailRules" :maxlength="64" class="q-mb-sm"
           type="email" />
+
+        <!-- SOCIAL -->
         <InputText ref="socialInput" v-model="customer.social" :maxlength="64" class="q-mb-sm" />
         <div class="mega-spacer"></div>
 
-        <div class="flex flex-start items-center content-center">
-          <h5>Commission Details</h5>
-          <q-btn round flat icon="mdi-delete" class="q-ml-sm" color="negative" @click="clearCommission"></q-btn>
-        </div>
+
+        <BuySectionHeader text="Commission Details" @clear="clearCommission" />
         <div class="spacer"></div>
 
+        <!-- POLISHING -->
         <RadioCards ref="polishingInput" v-model="commission.polishing.value" :options="commission.polishing.options"
           :label="commission.polishing.label" :hint="commission.polishing.hint" :name="commission.polishing.name" />
+
+        <!-- SIZE -->
         <RadioCards ref="sizeInput" v-model="commission.size.value" :options="commission.size.options"
           :label="commission.size.label" :hint="commission.size.hint" :name="commission.size.name"
           :price="sizePriceStr" />
+
+        <!-- BACKGROUND -->
         <RadioCards ref="backgroundInput" v-model="commission.background.value" :options="commission.background.options"
           :label="commission.background.label" :hint="commission.background.hint" :name="commission.background.name"
           :price="backgroundPriceStr" />
+
+        <!-- LICENSE -->
         <RadioCards ref="licenseInput" v-model="commission.license.value" :options="commission.license.options"
           :label="commission.license.label" :hint="commission.license.hint" :name="commission.license.name"
           :price="licensePriceStr" />
+
+        <!-- PRIVACY -->
         <RadioCards ref="privacyInput" v-model="commission.privacy.value" :options="commission.privacy.options"
           :label="commission.privacy.label" :hint="commission.privacy.hint" :name="commission.privacy.name"
           :price="privacyPriceStr" />
 
+        <!-- BRIEFING -->
         <InputText ref="briefingInput" v-model="commission.briefing" :rules="briefingTextRules" :maxlength="2000"
           type="textarea" autogrow class="q-mb-sm" />
+
+        <!-- REFERENCES -->
         <InputText ref="referencesInput" v-model="commission.references" :rules="referenceTextRules" :maxlength="1000"
           type="textarea" autogrow class="q-mb-sm" />
+
+        <!-- ADDITIONAL COMMENTS -->
         <InputText ref="commentsInput" v-model="commission.comments" :maxlength="512" type="textarea" autogrow
           class="q-mb-sm" />
 
-        <div v-if="totalPrice > 0" class="flex column flex-center finalPrice">
-          <h6>Estimated Price</h6>
-          <h4>{{ totalPrice }} USD</h4>
-          <span class="text-body2">
-            * This is a rough estimate, prices can vary greatly.<br>
-            * A post-submit reply with the precise value may take a day.
-          </span>
-        </div>
-
+        <BuyEstimate :data="priceEstimateData" :notes="buy.estimateNotes" />
         <BuyButton :disable="!isFormValid" />
       </q-form>
+
 
       <q-separator color="dark2" class="self-center q-my-xl"></q-separator>
 
@@ -72,6 +80,8 @@ import InputText from './InputText.vue';
 import BuyNotes from './BuyNotes.vue';
 import BuyButton from "./BuyButton.vue";
 import RadioCards from "./RadioCards.vue";
+import BuyEstimate from "./BuyEstimate.vue";
+import BuySectionHeader from "./BuySectionHeader.vue";
 
 const props = defineProps({
   buy: {
@@ -80,7 +90,8 @@ const props = defineProps({
       fees: { type: Object, default: () => ({}) },
       formUrl: { type: String, default: "" },
       customer: Default.customer,
-      commission: Default.commission
+      commission: Default.commission,
+      estimateNotes: ""
     })
   }
 });
@@ -151,8 +162,13 @@ const licensePriceStr = computed(() => mulStr(licensePrice.value));
 const privacyPrice = computed(() => mulPriceOrDefault(privacyInput, props.buy.fees.privacy));
 const privacyPriceStr = computed(() => mulStr(privacyPrice.value));
 
-const totalPrice = computed(() => (sizePrice.value + backgroundPrice.value) * (1 + (licensePrice.value + privacyPrice.value)));
-
+const priceEstimateData = computed(() => ({
+  polishing: { label: props.buy.commission.polishing.value, value: polishingIndex.value },
+  size: { label: props.buy.commission.size.value, price: sizePrice.value },
+  background: { label: props.buy.commission.background.value, price: backgroundPrice.value },
+  license: { label: props.buy.commission.license.value, price: licensePrice.value },
+  privacy: { label: props.buy.commission.privacy.value, price: privacyPrice.value },
+}));
 </script>
 
 
