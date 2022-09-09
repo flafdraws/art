@@ -6,17 +6,19 @@
         <h4>COMMISSION FORM</h4>
         <div class="mega-spacer"></div>
 
-        <BuySectionHeader text="Contact Info" @clear="clearContact" />
+        <BuySectionHeader text="Contact Info" @clear="clearCustomer" />
 
         <!-- NAME -->
-        <InputText ref="nameInput" v-model="customer.nickname" :rules="nameRules" :maxlength="64" class="q-mb-sm" />
+        <InputText ref="nameInput" v-model="customer.nickname" :rules="nameRules" :maxlength="64" class="q-mb-sm"
+          @update:model-value="saveCustomer" />
 
         <!-- EMAIL -->
         <InputText ref="emailInput" v-model="customer.email" :rules="emailRules" :maxlength="64" class="q-mb-sm"
-          type="email" />
+          type="email" @update:model-value="saveCustomer" />
 
         <!-- SOCIAL -->
-        <InputText ref="socialInput" v-model="customer.social" :maxlength="64" class="q-mb-sm" />
+        <InputText ref="socialInput" v-model="customer.social" :maxlength="64" class="q-mb-sm"
+          @update:model-value="saveCustomer" />
         <div class="mega-spacer"></div>
 
 
@@ -73,8 +75,9 @@
 
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { computed } from '@vue/reactivity';
+import { debounce } from "quasar";
 import { Default } from "../default";
 import InputText from './InputText.vue';
 import BuyNotes from './BuyNotes.vue';
@@ -126,7 +129,7 @@ const isFormValid = computed(() => {
 });
 
 const clearFields = (fields) => fields?.forEach(field => field.value.clear());
-const clearContact = () => clearFields([nameInput, emailInput, socialInput]);
+const clearCustomer = () => clearFields([nameInput, emailInput, socialInput]);
 const clearCommission = () => clearFields([sizeInput, polishingInput, backgroundInput, licenseInput, privacyInput, briefingInput, referencesInput, commentsInput]);
 const clearCommissionPartially = () => clearFields([sizeInput, polishingInput, backgroundInput]);
 
@@ -169,6 +172,22 @@ const priceEstimateData = computed(() => ({
   license: { label: props.buy.commission.license.value, price: licensePrice.value },
   privacy: { label: props.buy.commission.privacy.value, price: privacyPrice.value },
 }));
+
+const saveCustomer = debounce(() => {
+  localStorage.setItem('nickname', props.buy.customer.nickname.value || '');
+  localStorage.setItem('email', props.buy.customer.email.value || '');
+  localStorage.setItem('social', props.buy.customer.social.value || '');
+}, 2000);
+
+const loadCustomer = () => {
+  props.buy.customer.nickname.value = localStorage.getItem('nickname') || '';
+  props.buy.customer.email.value = localStorage.getItem('email') || '';
+  props.buy.customer.social.value = localStorage.getItem('social') || '';
+};
+
+onMounted(() => {
+  loadCustomer();
+});
 </script>
 
 
