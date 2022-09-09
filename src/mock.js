@@ -139,6 +139,7 @@ export function fetchMockedJSON() {
         {
           type: "table", content: [
             ["Item", "Price (Line Art)", "Price (Painting)"],
+            ["Icon", "+ 20 USD", "+ 45 USD"],
             ["Bust", "+ 30 USD", "+ 60 USD"],
             ["Half-body", "+ 40 USD", "+ 75 USD"],
             ["Full-body", "+ 50 USD", "+ 90 USD"],
