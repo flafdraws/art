@@ -1,7 +1,8 @@
 <template>
-  <q-input v-model="modelValue.value" :label="modelValue.label" :placeholder="modelValue.placeholder"
-    :hint="modelValue.hint" hide-hint @update:model-value="updateModel" :rules="rules" :maxlength="maxlength"
-    class="inputText" clearable counter>
+  <q-input :name="modelValue.name" v-model="modelValue.value" :label="modelValue.label"
+    :placeholder="modelValue.placeholder" :hint="modelValue.hint" :type="type" hide-hint
+    @update:model-value="updateModel" :rules="rules" :maxlength="maxlength" class="inputText" clearable counter
+    :autogrow="autogrow">
     <template v-slot:prepend v-if="isRequired">
       <q-icon name="mdi-check-circle" :class="`checkIcon ${isValid > 0 ? 'active' : ''}`">
       </q-icon>
@@ -24,6 +25,8 @@ const props = defineProps({
       hint: { type: String, default: "" },
     })
   },
+  type: { type: String, default: "text" },
+  autogrow: { type: Boolean, default: false },
   maxlength: { type: Number, default: 64 },
   rules: {
     type: Array,

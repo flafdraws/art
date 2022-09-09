@@ -4,23 +4,29 @@
       <q-icon class="q-mr-sm" color="warning" name="mdi-comment-alert" size="sm"></q-icon>
       <h5>Notes</h5>
     </div>
-    <div>
+    <div class="flex flex-start row no-wrap">
       <q-icon name="mdi-chevron-right" size="sm" />
-      See my
-      <a target="_blank" href="https://trello.com/b/u4aypX98/flaf-commissions"><b>Commission Board</b></a>
-      to check ongoing commissions and past orders.
+      <div class="note-item">
+        See my
+        <a target="_blank" href="https://trello.com/b/u4aypX98/flaf-commissions"><b>Commission Board</b></a>
+        to check ongoing commissions and past orders.
+      </div>
     </div>
-    <div>
+    <div class="flex flex-start row no-wrap">
       <q-icon name="mdi-chevron-right" size="sm" />
-      Public commissions may be streamed at my
-      <a target="_blank" href="https://www.twitch.tv/flafdraws"><b>Twitch Channel</b></a>
-      or showcased at my
-      <a target="_blank" href="https://www.youtube.com/channel/UCLq1fsQwY9fP3dOF8JBhjLw?sub_confirmation=1"><b>Youtube
-          Channel</b></a>.
+      <div class="note-item">
+        Public commissions may be streamed at my
+        <a target="_blank" href="https://www.twitch.tv/flafdraws"><b>Twitch Channel</b></a>
+        or showcased at my
+        <a target="_blank" href="https://www.youtube.com/channel/UCLq1fsQwY9fP3dOF8JBhjLw?sub_confirmation=1"><b>Youtube
+            Channel</b></a>.
+      </div>
     </div>
-    <div>
+    <div class="flex flex-start row no-wrap">
       <q-icon name="mdi-chevron-right" size="sm" />
-      I may decline any commission request for any reason.
+      <div class="note-item">
+        I may decline any commission request for any reason.
+      </div>
     </div>
   </div>
 </template>
@@ -44,8 +50,7 @@ a:link,
 }
 
 h5 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin: 0;
   font-weight: 500;
   font-size: 1.375rem;
   letter-spacing: 0.1rem;
@@ -53,5 +58,10 @@ h5 {
   @media(max-aspect-ratio: 1/1) and (max-width: 480px) {
     font-size: 1.2rem;
   }
+}
+
+.note-item {
+  flex-grow: 999;
+  text-align: left;
 }
 </style>

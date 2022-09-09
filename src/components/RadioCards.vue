@@ -10,12 +10,12 @@
     </div>
     <div class="flex flex-center">
       <div v-for="(item, i) in options" :key="i"
-        :class="`flex flex-center radioCard relative-position  ${isSelectedItem(item) ? 'selected' : ''}`" v-ripple
+        :class="`flex flex-center radioCard relative-position  ${isItemSelected(item) ? 'selected' : ''}`" v-ripple
         @click="selectCard(i)">
         <div class="flex flex-center column">
           <q-img v-if="item.img" :src="item.img" class="preview" fit="contain" />
           <q-radio v-model="modelValue" :name="name" :val="item.value" :label="item.label" class="radioBtn"
-            :color="isSelectedItem(item) ? 'grey-10' : 'white'">
+            :color="isItemSelected(item) ? 'grey-10' : 'grey-6'">
           </q-radio>
         </div>
         <q-tooltip v-if="item.tooltip" class="text-caption bg-info text-weight-bold text-black" anchor="top middle"
@@ -42,7 +42,7 @@ const emit = defineEmits(['update:modelValue']);
 const selectCard = (index) => {
   emit('update:modelValue', props.options[index].value);
 }
-const isSelectedItem = (item) => props.modelValue === item.value;
+const isItemSelected = (item) => props.modelValue === item.value;
 
 const isValid = computed(() => props.options.some(el => el.value === props.modelValue));
 
@@ -88,7 +88,7 @@ defineExpose({ isValid });
 
 .radioBtn {
   pointer-events: none;
-  color: white;
+  color: $grey-6;
   margin: 0;
   padding: 0;
   font-size: 1rem;
@@ -105,7 +105,7 @@ h5 {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 500;
-  font-size: 1.375rem;
+  font-size: 1.3rem;
   letter-spacing: 0.1rem;
 
   @media(max-aspect-ratio: 1/1) and (max-width: 480px) {

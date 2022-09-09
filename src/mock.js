@@ -239,7 +239,7 @@ export function fetchMockedJSON() {
           label: "Polishing Level",
           hint: "",
           options: [
-            { value: "Line Art", label: "Line Art / Sketch", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/doodle.png" },
+            { value: "Line Art / Sketch", label: "Line Art / Sketch", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/doodle.png" },
             { value: "Painting", label: "Painting", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/farm-girl.png" },
           ]
         },
@@ -276,6 +276,29 @@ export function fetchMockedJSON() {
             { value: "Public", label: "Public", tooltip: "The commission can be shown.", img: "" },
             { value: "Private", label: "Private", tooltip: "The commission cannot be disclosed for an agreed period.", img: "" },
           ]
+        },
+        briefing: {
+          name: "entry.2125445796",
+          value: "",
+          label: "Briefing",
+          hint: "Tell me about this commission (characters, background, story...)",
+          placeholder: "I want a D&D illustration of a...",
+        },
+        references: {
+          name: "entry.38416462",
+          value: "",
+          label: "References",
+          hint: "Links or mentions to visual language, style, mood, poses, ideas...",
+          placeholder: "Can you do it in this style? https://..." + '\n'
+            + "Maybe a scene like this? https://..." + '\n' +
+            "I like this pose >> https://...",
+        },
+        comments: {
+          name: "entry.8222790",
+          value: "",
+          label: "Additional Comments",
+          hint: "Anything else to add?",
+          placeholder: "",
         },
       },
       notes: {
