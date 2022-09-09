@@ -6,14 +6,20 @@
         <h4>COMMISSION FORM</h4>
         <div class="mega-spacer"></div>
 
-        <h5>Contact Info</h5>
+        <div class="flex flex-start items-center content-center">
+          <h5>Contact Info</h5>
+          <q-btn round flat icon="mdi-delete" class="q-ml-sm" color="negative" @click="clearContact"></q-btn>
+        </div>
         <InputText ref="nameInput" v-model="customer.nickname" :rules="nameRules" :maxlength="64" class="q-mb-sm" />
         <InputText ref="emailInput" v-model="customer.email" :rules="emailRules" :maxlength="64" class="q-mb-sm"
           type="email" />
-        <InputText v-model="customer.social" :maxlength="64" class="q-mb-sm" />
+        <InputText ref="socialInput" v-model="customer.social" :maxlength="64" class="q-mb-sm" />
         <div class="mega-spacer"></div>
 
-        <h5>Commission Details</h5>
+        <div class="flex flex-start items-center content-center">
+          <h5>Commission Details</h5>
+          <q-btn round flat icon="mdi-delete" class="q-ml-sm" color="negative" @click="clearCommission"></q-btn>
+        </div>
         <div class="spacer"></div>
         <RadioCards ref="sizeInput" v-model="commission.size.value" :options="commission.size.options"
           :label="commission.size.label" :hint="commission.size.hint" :name="commission.size.name" />
@@ -70,6 +76,7 @@ const commission = computed(() => props.buy.commission);
 
 const nameInput = ref(null);
 const emailInput = ref(null);
+const socialInput = ref(null);
 const sizeInput = ref(null);
 const polishingInput = ref(null);
 const backgroundInput = ref(null);
@@ -77,6 +84,7 @@ const licenseInput = ref(null);
 const privacyInput = ref(null);
 const briefingInput = ref(null);
 const referencesInput = ref(null);
+const commentsInput = ref(null);
 
 const nameRules = [v => !!v || 'Name is required'];
 const emailRules = [v => !!v || 'E-mail is required', v => /.+@.+\..+/.test(v) || 'E-mail must be valid',];
@@ -92,8 +100,14 @@ const isFormValid = computed(() => {
   return true;
 });
 
+const clearFields = (fields) => fields?.forEach(field => field.value.clear());
+const clearContact = () => clearFields([nameInput, emailInput, socialInput]);
+const clearCommission = () => clearFields([sizeInput, polishingInput, backgroundInput, licenseInput, privacyInput, briefingInput, referencesInput, commentsInput]);
+const clearCommissionRadioCards = () => clearFields([sizeInput, polishingInput, backgroundInput, licenseInput, privacyInput]);
+
 const onSubmit = (evt) => {
   evt.target.submit();
+  clearCommissionRadioCards();
 }
 </script>
 
@@ -128,8 +142,7 @@ h4 {
 }
 
 h5 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin: 0;
   font-weight: 700;
   font-size: 1.375rem;
   letter-spacing: 0.1rem;

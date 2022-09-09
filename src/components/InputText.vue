@@ -41,6 +41,7 @@ function updateModel(value) {
   emit('update:modelValue', props.modelValue);
 }
 
+const clear = () => updateModel("");
 const isRequired = computed(() => props.rules && props.rules.length > 0);
 const isValid = computed(() => {
   for (let i = 0; i < props.rules.length; i++) {
@@ -51,7 +52,8 @@ const isValid = computed(() => {
   return true;
 });
 
-defineExpose({ isValid });
+
+defineExpose({ isValid, clear });
 </script>
 
 

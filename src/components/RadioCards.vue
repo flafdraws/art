@@ -46,7 +46,9 @@ const isItemSelected = (item) => props.modelValue === item.value;
 
 const isValid = computed(() => props.options.some(el => el.value === props.modelValue));
 
-defineExpose({ isValid });
+const clear = () => emit('update:modelValue', "");
+
+defineExpose({ isValid, clear });
 </script>
 
 <style scoped lang="scss">
