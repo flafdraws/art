@@ -10,15 +10,15 @@
 
         <!-- NAME -->
         <InputText ref="nameInput" v-model="customer.nickname" :rules="nameRules" :maxlength="64" class="q-mb-sm"
-          @update:model-value="saveCustomer" />
+          @update:model-value="saveCache.nickname" />
 
         <!-- EMAIL -->
         <InputText ref="emailInput" v-model="customer.email" :rules="emailRules" :maxlength="64" class="q-mb-sm"
-          type="email" @update:model-value="saveCustomer" />
+          type="email" @update:model-value="saveCache.email" />
 
         <!-- SOCIAL -->
         <InputText ref="socialInput" v-model="customer.social" :maxlength="64" class="q-mb-sm"
-          @update:model-value="saveCustomer" />
+          @update:model-value="saveCache.social" />
         <div class="mega-spacer"></div>
 
 
@@ -27,39 +27,40 @@
 
         <!-- POLISHING -->
         <RadioCards ref="polishingInput" v-model="commission.polishing.value" :options="commission.polishing.options"
-          :label="commission.polishing.label" :hint="commission.polishing.hint" :name="commission.polishing.name" />
+          :label="commission.polishing.label" :hint="commission.polishing.hint" :name="commission.polishing.name"
+          @update:model-value="saveCache.polishing" />
 
         <!-- SIZE -->
         <RadioCards ref="sizeInput" v-model="commission.size.value" :options="commission.size.options"
-          :label="commission.size.label" :hint="commission.size.hint" :name="commission.size.name"
-          :price="sizePriceStr" />
+          :label="commission.size.label" :hint="commission.size.hint" :name="commission.size.name" :price="sizePriceStr"
+          @update:model-value="saveCache.size" />
 
         <!-- BACKGROUND -->
         <RadioCards ref="backgroundInput" v-model="commission.background.value" :options="commission.background.options"
           :label="commission.background.label" :hint="commission.background.hint" :name="commission.background.name"
-          :price="backgroundPriceStr" />
+          :price="backgroundPriceStr" @update:model-value="saveCache.background" />
 
         <!-- LICENSE -->
         <RadioCards ref="licenseInput" v-model="commission.license.value" :options="commission.license.options"
           :label="commission.license.label" :hint="commission.license.hint" :name="commission.license.name"
-          :price="licensePriceStr" />
+          :price="licensePriceStr" @update:model-value="saveCache.license" />
 
         <!-- PRIVACY -->
         <RadioCards ref="privacyInput" v-model="commission.privacy.value" :options="commission.privacy.options"
           :label="commission.privacy.label" :hint="commission.privacy.hint" :name="commission.privacy.name"
-          :price="privacyPriceStr" />
+          :price="privacyPriceStr" @update:model-value="saveCache.privacy" />
 
         <!-- BRIEFING -->
         <InputText ref="briefingInput" v-model="commission.briefing" :rules="briefingTextRules" :maxlength="2000"
-          type="textarea" autogrow class="q-mb-sm" />
+          type="textarea" autogrow class="q-mb-sm" @update:model-value="saveCache.briefing" />
 
         <!-- REFERENCES -->
         <InputText ref="referencesInput" v-model="commission.references" :rules="referenceTextRules" :maxlength="1000"
-          type="textarea" autogrow class="q-mb-sm" />
+          type="textarea" autogrow class="q-mb-sm" @update:model-value="saveCache.references" />
 
         <!-- ADDITIONAL COMMENTS -->
         <InputText ref="commentsInput" v-model="commission.comments" :maxlength="512" type="textarea" autogrow
-          class="q-mb-sm" />
+          class="q-mb-sm" @update:model-value="saveCache.comments" />
 
         <BuyEstimate :data="priceEstimateData" :notes="buy.estimateNotes" />
         <BuyButton :disable="!isFormValid" />
@@ -173,20 +174,45 @@ const priceEstimateData = computed(() => ({
   privacy: { label: props.buy.commission.privacy.value, price: privacyPrice.value },
 }));
 
-const saveCustomer = debounce(() => {
-  localStorage.setItem('nickname', props.buy.customer.nickname.value || '');
-  localStorage.setItem('email', props.buy.customer.email.value || '');
-  localStorage.setItem('social', props.buy.customer.social.value || '');
-}, 2000);
 
-const loadCustomer = () => {
-  props.buy.customer.nickname.value = localStorage.getItem('nickname') || '';
-  props.buy.customer.email.value = localStorage.getItem('email') || '';
-  props.buy.customer.social.value = localStorage.getItem('social') || '';
+const saveKey = (key, field) => debounce(() => localStorage.setItem(key, field.value || ''), 1000);
+const saveCache = {
+  // Customer
+  nickname: saveKey('nickname', props.buy.customer.nickname),
+  email: saveKey('email', props.buy.customer.email),
+  social: saveKey('social', props.buy.customer.social),
+
+  // Commission
+  polishing: saveKey('polishing', props.buy.commission.polishing),
+  size: saveKey('size', props.buy.commission.size),
+  background: saveKey('background', props.buy.commission.background),
+  license: saveKey('license', props.buy.commission.license),
+  privacy: saveKey('privacy', props.buy.commission.privacy),
+  briefing: saveKey('briefing', props.buy.commission.briefing),
+  references: saveKey('references', props.buy.commission.references),
+  comments: saveKey('comments', props.buy.commission.comments),
+};
+
+const loadKey = (key, field) => field.value = localStorage.getItem(key) || '';
+const loadCache = () => {
+  // Customer
+  loadKey('nickname', props.buy.customer.nickname);
+  loadKey('email', props.buy.customer.email);
+  loadKey('social', props.buy.customer.social);
+
+  // Commission
+  loadKey('polishing', props.buy.commission.polishing);
+  loadKey('size', props.buy.commission.size);
+  loadKey('background', props.buy.commission.background);
+  loadKey('license', props.buy.commission.license);
+  loadKey('privacy', props.buy.commission.privacy);
+  loadKey('briefing', props.buy.commission.briefing);
+  loadKey('references', props.buy.commission.references);
+  loadKey('comments', props.buy.commission.comments);
 };
 
 onMounted(() => {
-  loadCustomer();
+  loadCache();
 });
 </script>
 
