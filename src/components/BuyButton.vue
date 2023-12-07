@@ -1,8 +1,8 @@
 <template>
   <div class="flex row flex-center q-mt-xl">
-    <q-btn class="self-center purchaseButton content-center" type="submit" :disable="disable">
+    <q-btn class="self-center purchaseButton content-center" :disable="disable" :href="href" target="__blank">
       <div class="flex column flex-center">
-        <span class="q-mb-sm">Submit Order</span>
+        <span class="q-mb-sm">Open Form</span>
         <q-icon large class="mt-1" size="md" name="mdi-cart-arrow-right"></q-icon>
       </div>
     </q-btn>
@@ -12,7 +12,8 @@
 
 <script setup>
 const props = defineProps({
-  disable: { type: Boolean, default: false }
+  disable: { type: Boolean, default: false },
+  href: { type: String, default: ""}
 });
 </script>
 

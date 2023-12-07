@@ -8,7 +8,7 @@
         <q-btn v-if="items.length > 1" round flat icon="mdi-chevron-left" size="lg" @click="goPrevious"
           class="q-mr-xs" />
         <q-btn v-if="items.length > 1" round flat icon="mdi-chevron-right" size="lg" @click="goNext" class="q-mr-md" />
-        <q-btn round flat icon="mdi-chevron-up" size="lg" @click="setDialogVisible(false)" />
+        <q-btn round flat icon="mdi-close" size="lg" @click="setDialogVisible(false)" />
       </div>
     </div>
   </div>

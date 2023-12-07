@@ -6,11 +6,6 @@ export function fetchMockedJSON() {
   const data = {
     banner: "https://raw.githubusercontent.com/flafdraws/gallery/main/banner/farm-girl.png",
     art: [
-      { title: "Zelda Facial Expression - Bored Shrek", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda5.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda5.png" },
-      { title: "Zelda Facial Expression - Ainsley Harriott", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda4.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda4.png" },
-      { title: "Zelda Facial Expression - Tobey Maguire", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda3.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda3.png" },
-      { title: "Zelda Facial Expression - Steve Carell", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda2.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda2.png" },
-      { title: "Zelda Facial Expression - Anthony Davis", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda1.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda1.png" },
       { title: "Mood (study)", "date": "2022/05/03", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/mood.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/mood.png" },
       { title: "Farm Girl (study)", "date": "2022/05/03", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/farm-girl.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/farm-girl.png" },
       { title: "Lumiel - Portrait (OC Redesigned)", "date": "2021/10/23", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/lumiel-avatar.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/lumiel-avatar.png" },
@@ -68,10 +63,8 @@ export function fetchMockedJSON() {
         { type: "h6", content: "Accepted platforms / methods:" },
         {
           type: "ul", content: [
-            "Wise",
-            "Stripe",
             "Paypal",
-            "Artistree",
+            "Wise",
             "Ko-fi",
             "Pix (Brazil only)"
           ]
@@ -97,29 +90,60 @@ export function fetchMockedJSON() {
         { type: "format", content: "<i>- Please note that most commissions usually <b>finish way sooner</b>, but a fully detailed splash art with multiple iterations - for instance - is a long process.</i>" },
         { type: "big-spacer", content: null },
 
-        { type: "h5", content: "Privacy" },
+        { type: "h5", content: "Privacy Level" },
         { type: "h6", content: "(Default: Public)" },
         { type: "span", content: "The artist reserves the right to use and publish the commission and work in progress on their social media, streaming platforms, banners, websites and portfolio unless negotiated otherwise." },
         { type: "big-spacer", content: null },
 
         { type: "h5", content: "License" },
         { type: "h6", content: "(Default: Personal)" },
-        { type: "span", content: "The client is entitled to personal use only, this includes but is not limited to printing for personal display, wallpaper, posting as profile icon on websites/social medias. This does NOT include channel branding, product advertising or merchandising." },
-        { type: "span", content: "Personal usage in social media does not require crediting the artist." },
-        { type: "span", content: "The artist retains the commercial use rights to the work unless negotiated otherwise." },
+        { type: "span", content: "The client has the right to use the commission for their personal usage, this includes but not limited to print for personal display, wallpaper, posted as profile icons on websites/social medias as long as they give proper credits to the artist. The artist retains the commercial use licenses of the work unless negotiated otherwise." },
+        { type: "span", content: "Personal Profile Picture or Forum Signature usage does not require crediting the artist." },
+        { type: "mega-spacer", content: null },
+
+        { type: "h4", content: "COMMERCIAL USE LICENSES" },
+        { type: "h5", content: "Usage" },
+        { type: "span", content: "The purchaser of commercial use licenses have the rights to use the commission as merchandise to sell, promote, distribute, produce and for any other commercial purposes as long as they don't involve modifying the product or impacting negatively the artist." },
+        { type: "format", content: "Commercial licensing prices are listed in the <b>Prices Tab</b>. If none of the licenses listed there fit your needs, contact me for a personalized negotiation." },
+        { type: "big-spacer", content: null },
+
+        { type: "h5", content: "Credits" },
+        { type: "span", content: "The purchaser of commercial use is still required to give proper credits to the artist while using or exposing the work." },
+        { type: "big-spacer", content: null },
+
+        { type: "h5", content: "License Options" },
+        {
+          type: "format", content: "\
+        The commercial licensing options are listed in a table at <i>Prices tab</i>.<br>\
+        * Additional fees do stack by <b>sum</b>, not by multiplying - they are applied to the base price always. E.g.:"
+        },
+        { type: "format", content: "<b>Correct</b><br>A1 + B = Base + 50% + 100% = +150% = x 2.5" },
+        { type: "format", content: "<b>Wrong</b><br>A1 + B = Base x 1.5 x 2 = x 3 = +200%." },
       ]
     },
     prices: {
       header: undefined,
       body: [
+        { type: "h5", content: "Notes", icon: "mdi-comment-alert", iconColor: "warning" },
+        {
+          type: "ul", content: [
+            "All prices listed here are <b>estimated</b> and may change based on multiple factors (e.g.: character detail, scene detail, render level).",
+            "Prices are <b>limited time offers</b> and are not guaranteed to stay the same in the future.",
+            "Everything is negotiable - <i>\"Dormammu, I've come to bargain\"</i>",
+            "Remember to check the TOS tab for in-depth details.",
+          ]
+        },
+        { type: "mega-spacer", content: null },
+
         { type: "h4", content: "CHARACTERS" },
         {
           type: "table", content: [
-            ["Item", "Price"],
-            ["Icon", "40 USD"],
-            ["Bust", "50 USD"],
-            ["Half-body", "70 USD"],
-            ["Full-body", "90 USD"]
+            ["Item", "Price (Line Art)", "Price (Painting)"],
+            ["Icon", "+ 20 USD", "+ 45 USD"],
+            ["Bust", "+ 30 USD", "+ 60 USD"],
+            ["Half-body", "+ 40 USD", "+ 75 USD"],
+            ["Full-body", "+ 50 USD", "+ 90 USD"],
+            ["Additional Character", "+ 60%", "+ 60%"]
           ]
         },
         {
@@ -134,11 +158,11 @@ export function fetchMockedJSON() {
         { type: "h4", content: "BACKGROUND" },
         {
           type: "table", content: [
-            ["Item", "Price"],
-            ["Plain Color or Gradient", "Free"],
-            ["Abstract Design", "20 USD"],
-            ["Simple Environment", "50 USD"],
-            ["Complex Scene (Perspective, architecture...)", "90 USD"]
+            ["Item", "Price (Line Art)", "Price (Painting)"],
+            ["Plain Color or Gradient", "Free", "Free"],
+            ["Abstract Design", "+ 10 USD", "+ 20 USD"],
+            ["Simple Environment", "+ 30 USD", "+ 50 USD"],
+            ["Complex Scene (Perspective, architecture...)", "+ 60 USD", "+ 90 USD"]
           ]
         },
         {
@@ -146,28 +170,158 @@ export function fetchMockedJSON() {
             { thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/lake-night.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/lake-night.png" },
           ]
         },
-        { type: "mega-spacer", content: null },
+        { type: "big-spacer", content: null },
 
-        { type: "h4", content: "COMMERCIAL USE" },
-        { type: "span", content: "For commercial use of commissions, contact me through the following channels:" },
+        { type: "h4", content: "RUSH ORDER" },
         {
-          type: "ul", content: ["Discord: flafdraws#5176", "E-mail: flafdraws.buy@gmail.com"]
+          type: "table", content: [
+            ["Rush", "Description", "Price Increase"],
+            ["Boost", "⏱️🔽 Reduce deadline", "+ 50%"],
+            ["Nitro", "⏱️🔽 Reduce deadline +", "+ 100%"],
+          ]
         },
         { type: "mega-spacer", content: null },
 
-        { type: "h5", content: "Notes", icon: "mdi-comment-alert", iconColor: "warning" },
+        { type: "h4", content: "COMMERCIAL LICENSES" },
         {
-          type: "ul", content: [
-            "All prices listed here are <b>estimated</b> and may change based on multiple factors (e.g.: character detail, scene detail, render level).",
-            "Prices are <b>limited time offers</b> and are not guaranteed to stay the same in the future.",
-            "Everything is negotiable",
-            "Remember to check the TOS tab for in-depth details.",
+          type: "table", content: [
+            ["License", "Description", "Price Increase"],
+            ["A1: Branding only", "Promotional content linked to commercial projects: online shops, Youtube Twitch, influencer branding...", "+ 50%"],
+            ["A2: Indirect Merch", "Merchandise where the art is not the main focus itself: book covers, commercial concept art, game assets...", "+ 100%"],
+            ["A3: Direct Merch", "Merchandise where the art itself is the main focus: keychains, pillow covers, t-shirts...", "+ 200%"],
+            ["B: Privacy", "Private commission: the work remains secret until agreed date.", "+ 50%"]
           ]
         },
       ],
     },
     buy: {
-      formUrl: "https://docs.google.com/forms/u/2/d/e/1FAIpQLSdTIue8l5zYda8oF7SYjK0tIZSZ3Ibg6ZTn4N-MUcP6xv4OGg/formResponse"
+      fees: {
+        size: [
+          [20, 45], // Icon
+          [30, 60], // Bust
+          [40, 75], // Half-body
+          [50, 90], // Full-body
+          [74, 120] // Big
+        ],
+        background: [
+          [0, 0],
+          [10, 20],
+          [30, 50],
+          [60, 90]
+        ],
+        license: [0, 0.5, 1, 2],
+        privacy: [0, 0.5]
+      },
+      formUrl: "https://docs.google.com/forms/u/2/d/e/1FAIpQLSdTIue8l5zYda8oF7SYjK0tIZSZ3Ibg6ZTn4N-MUcP6xv4OGg/formResponse",
+      customer: {
+        nickname: {
+          name: "entry.1187263954",
+          value: "",
+          label: "Casual Name",
+          placeholder: "Johnny",
+          hint: "* Casual name or nickname for addressing purposes only."
+        },
+        email: {
+          name: "entry.1383363498",
+          value: "",
+          label: "E-mail",
+          placeholder: "johndoe@mail.com",
+          hint: "* Artwork will be sent to this mailbox!"
+        },
+        social: {
+          name: "entry.1956441675",
+          value: "",
+          label: "Social Media",
+          placeholder: "@johndoe (Twitter)",
+          hint: "* Your @handle to DM for contact (Twitter, Discord, Twitch...)?"
+        },
+      },
+      commission: {
+        size: {
+          name: "entry.944257849",
+          value: "",
+          label: "Size",
+          hint: "* Multiple characters = Big size",
+          options: [
+            { value: "Icon", label: "Icon", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/ui/size-icon.png" },
+            { value: "Bust", label: "Bust", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/style-exploration.png" },
+            { value: "Half-body", label: "Half-body", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-6.png" },
+            { value: "Full-body", label: "Full-body", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-3.png" },
+            { value: "Big", label: "Big", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/ui/size-big.png" }
+          ]
+        },
+        polishing: {
+          name: "entry.1763770804",
+          value: "",
+          label: "Polishing Level",
+          hint: "",
+          options: [
+            { value: "Line Art", label: "Line Art", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/doodle.png" },
+            { value: "Painting", label: "Painting", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/farm-girl.png" },
+          ]
+        },
+        background: {
+          name: "entry.1525019333",
+          value: "",
+          label: "Background",
+          hint: "",
+          options: [
+            { value: "Single Color / Gradient", label: "Single Color / Gradient", img: "" },
+            { value: "Abstract Design", label: "Abstract Design", img: "" },
+            { value: "Simple Environment", label: "Simple Environment", img: "" },
+            { value: "Complex Scene", label: "Complex Scene", img: "" },
+          ]
+        },
+        license: {
+          name: "entry.1568503269",
+          value: "",
+          label: "License",
+          hint: "For what purpose would you use the artwork?<br>* Please refer to <b>TOS</b> and <b>Prices</b> tabs for more details.",
+          options: [
+            { value: "A0 - Personal Use", label: "A0 - Personal Use", tooltip: "Profile pic, D&D campaign, wallpaper...", img: "" },
+            { value: "A1 - Branding", label: "A1 - Branding", tooltip: "Youtube, Twitch, influencer, webpage...", img: "" },
+            { value: "A2 - Indirect Merch", label: "A2 - Indirect Merch", tooltip: "Book covers, game assets...", img: "" },
+            { value: "A3 - Direct Merch", label: "A3 - Direct Merch", tooltip: "Keychains, mugs, t-shirts...", img: "" },
+          ]
+        },
+        privacy: {
+          name: "entry.1553002815",
+          value: "",
+          label: "Privacy",
+          hint: "",
+          options: [
+            { value: "Public", label: "Public", tooltip: "The commission can be shown.", img: "" },
+            { value: "Private", label: "Private", tooltip: "The commission cannot be disclosed for an agreed period.", img: "" },
+          ]
+        },
+        briefing: {
+          name: "entry.2125445796",
+          value: "",
+          label: "Briefing",
+          hint: "Tell me about this commission (characters, background, story...)",
+          placeholder: "I want a D&D illustration of a...",
+        },
+        references: {
+          name: "entry.38416462",
+          value: "",
+          label: "References",
+          hint: "Links or mentions to visual language, style, mood, poses, ideas...",
+          placeholder: "Can you do it in this style? https://..." + '\n'
+            + "Maybe a scene like this? https://..." + '\n' +
+            "I like this pose >> https://...",
+        },
+        comments: {
+          name: "entry.8222790",
+          value: "",
+          label: "Additional Comments",
+          hint: "Anything else to add?",
+          placeholder: "",
+        },
+      },
+      estimateNotes: "\* This is a rough estimate, prices can vary greatly.<br>\
+      * Everything is negotiable - <i>\"Dormammu, I've come to bargain\"</i>.<br>\
+      * Price estimates for <b>Big Size</b> commissions are less precise.<br>\
+      * I may take a day to reply with the definitive price."
     }
   };
 
