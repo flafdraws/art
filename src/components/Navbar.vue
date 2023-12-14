@@ -27,7 +27,7 @@ const tabs = ref([
   { label: "Art", icon: "mdi-brush" },
   { label: "About", icon: "mdi-account-circle" },
   { label: "TOS", icon: "mdi-file-document" },
-  { label: "Prices", icon: "mdi-currency-usd" },
+  // { label: "Prices", icon: "mdi-currency-usd" },
   { label: "Buy", icon: "mdi-cart" }
 ]);
 

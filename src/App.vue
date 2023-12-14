@@ -10,8 +10,8 @@
       <Art v-show="tab == 0" :items="artProjects" />
       <About v-show="tab == 1" :about="about" :loading="loading" />
       <TOS v-show="tab == 2" :tos="tos" />
-      <Prices v-show="tab == 3" :prices="prices" />
-      <Buy v-show="tab == 4" :buy="buy" />
+      <!-- <Prices v-show="tab == 3" :prices="prices" /> -->
+      <Buy v-show="tab == 3" :buy="buy" />
     </div>
 
     <br>
