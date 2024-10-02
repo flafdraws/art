@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul class="q-mx-xs gallery q-mb-lg">
+    <ul class="q-mx-none gallery q-mb-lg">
       <li v-for="(item, i) in items" :key="i" class="gallery-item">
         <img :name="i" :src="item.thumb" :alt="item.title" @click="onItemClick(i)" />
         <div class="item-fade flex justify-center items-end no-pointer">
@@ -41,7 +41,7 @@ const onItemClick = (value) => {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
+  gap: 2px;
   list-style-type: none;
   padding-inline-start: 0;
 }
@@ -55,7 +55,7 @@ const onItemClick = (value) => {
 
 @media (max-aspect-ratio: 1/1) {
   .gallery-item {
-    width: 70vw;
+    /* width: 95vw; */
     height: auto;
   }
 }
@@ -63,7 +63,7 @@ const onItemClick = (value) => {
 @media (max-height: 480px) {
   .gallery-item {
     width: auto;
-    height: 70vh;
+    height: 80vh;
   }
 }
 

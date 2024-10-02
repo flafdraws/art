@@ -1,7 +1,8 @@
 <template>
   <div>
-    <Header :banner-src="banner" :email="email" @keydown.left="keyEvent" />
-    <Navbar ref="nav" v-model="tab" />
+    <Header :banner-src="banner" :email="email" :socials="socials" @keydown.left="keyEvent" />
+    <Navbar ref="nav" v-model="tab" class="q-mb-md"/>
+    <Socials :socials="socials"  class="q-my-md"/>
 
     <Loading :loading="loading" />
     <LoadingFailed v-if="failedToLoad && !loading" @reload="fetchPageData" />
@@ -13,11 +14,9 @@
       <Buy v-show="tab == 3" :buy="buy" />
     </div>
 
-    <br>
     <div class="q-mt-xl"></div>
-    <Socials :socials="socials" />
     <Footer />
-    <ScrollButton class="q-mt-lg" />
+    <ScrollButton class="q-mt-md" />
     <div class="q-mt-lg" />
   </div>
 </template>

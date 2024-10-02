@@ -1,10 +1,12 @@
 <template>
   <q-parallax :src="bannerSrc" :height="bannerHeight">
-    <p class="banner header-minor q-pa-none q-ma-none">Art of</p>
-    <p class="banner header-major q-pa-none q-ma-none">Flaf</p>
-    <div class="flex items-center row q-pt-sm q-ma-none">
-      <q-icon name="email" class="q-mx-xs"></q-icon>
-      <span flat class="q-mx-xs mailbtn" @click="copyToClipboard(email)">flafdraws.buy@gmail.com</span>
+    <div class="flex column items-center">
+      <p class="banner header-minor q-pa-none q-ma-none">Art of</p>
+      <p class="banner header-major q-pa-none q-ma-none">Flaf</p>
+      <div class="flex items-center row q-pa-none q-pa-none">
+        <q-icon name="email" class="q-mx-xs" size="sm"></q-icon>
+        <span flat class="q-mx-xs mailbtn " @click="copyToClipboard(email)">flafdraws.buy@gmail.com</span>
+      </div>
     </div>
   </q-parallax>
 </template>
@@ -12,7 +14,6 @@
 <script setup>
 import { computed } from '@vue/reactivity';
 import { Screen, useQuasar } from 'quasar';
-import { Notify } from 'quasar';
 
 const props = defineProps({
   bannerSrc: {
@@ -38,6 +39,7 @@ const copyToClipboard = async function copyTextToClipboard(email) {
       message: 'Copied to clipboard.',
       caption: email,
       color: 'secondary',
+      position: 'top',
       timeout: 1000
     });
   } catch (err) {
@@ -61,7 +63,10 @@ const copyToClipboard = async function copyTextToClipboard(email) {
 }
 
 .mailbtn {
+  font-size: 16px;
   text-transform: lowercase;
+  font-weight: 400;
+  text-shadow: 2px 2px 8px black, 2px 2px 8px black, 2px 2px 8px black;
 }
 
 .header-minor {

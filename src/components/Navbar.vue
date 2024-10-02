@@ -1,6 +1,5 @@
 <template>
-  <div class="navbar">
-    
+  <div>
     <div v-if="$q.screen.xs" class="mobileNav flex column xs">
       <q-btn icon="mdi-menu" label="" @click="toggleMobileVisility" size="lg" flat square class="mobileNavButton self-end"/>
       
@@ -66,14 +65,6 @@ defineExpose({ updateValue });
 </script>
 
 <style scoped lang="scss">
-.navbar {
-  margin-bottom: 48px;
-
-  @media (max-aspect-ratio: 1/1) {
-    margin-bottom: 24px;
-  }
-}
-
 .inactive {
   color: $disabled;
 }
