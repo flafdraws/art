@@ -4,36 +4,37 @@
  * ======================================================== */
 export function fetchMockedJSON() {
   const data = {
-    banner: "https://raw.githubusercontent.com/flafdraws/gallery/main/banner/farm-girl.png",
+    banner: "https://raw.githubusercontent.com/flafdraws/gallery/main/banner/banner.jpg",
     art: [
-      { title: "Zelda Facial Expression - Bored Shrek", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda5.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda5.png" },
-      { title: "Zelda Facial Expression - Ainsley Harriott", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda4.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda4.png" },
-      { title: "Zelda Facial Expression - Tobey Maguire", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda3.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda3.png" },
-      { title: "Zelda Facial Expression - Steve Carell", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda2.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda2.png" },
-      { title: "Zelda Facial Expression - Anthony Davis", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda1.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda1.png" },
-      { title: "Mood (study)", "date": "2022/05/03", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/mood.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/mood.png" },
-      { title: "Farm Girl (study)", "date": "2022/05/03", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/farm-girl.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/farm-girl.png" },
-      { title: "Lumiel - Portrait (OC Redesigned)", "date": "2021/10/23", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/lumiel-avatar.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/lumiel-avatar.png" },
-      { title: "Lake at night (study)", "date": "2022/05/02", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/lake-night.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/lake-night.png" },
-      { title: "Random doodle", "date": "2022/06/27", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/doodle.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/doodle.png" },
-      { title: "Style exploration", "date": "2022/06/13", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/style-exploration.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/style-exploration.png" },
-      { title: "Enpitsu, the art bender", "date": "2021/02/28", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/enpitsu.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/enpitsu.png" },
-      { title: "Sword Girls 1", "date": "2022/03/16", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-1.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-1.png" },
-      { title: "Sword Girls 2", "date": "2022/03/17", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-2.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-2.png" },
-      { title: "Sword Girls 3", "date": "2022/03/18", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-3.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-3.png" },
-      { title: "Sword Girls 4", "date": "2022/03/19", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-4.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-4.png" },
-      { title: "Sword Girls 5", "date": "2022/03/20", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-5.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-5.png" },
-      { title: "Sword Girls 6", "date": "2022/03/21", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-6.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-6.png" },
+      { title: "That support who doesn't heal", "date": "2024/10/02", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/ro-priest.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/ro-priest.jpg" },
+      { title: "Miku Churrasqueira", "date": "2024/09/24", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/mikuchurrasqueira.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/mikuchurrasqueira.jpg" },
+      { title: "犬✕猫・Dog x Cat", "date": "2024/07/18", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/dogxcat.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/dogxcat.jpg" },
+      { title: "Misty & Psyduck", "date": "2024/07/05", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/misty-psyduck.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/misty-psyduck.jpg" },
+      { title: "Paddle!", "date": "2024/05/01", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/paddle.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/paddle.png" },
+      { title: "Your Honk", "date": "2024/05/24", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/your-honk.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/your-honk.png" },
+      { title: "Mood (study)", "date": "2022/05/03", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/mood.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/mood.png" },
+      { title: "Farm Girl (study)", "date": "2022/05/03", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/farm-girl.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/farm-girl.png" },
+      { title: "Jinx icon", "date": "2022/05/03", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/jinx.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/jinx.png" },
+      { title: "Zelda Facial Expression - Bored Shrek", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda5.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda5.png" },
+      { title: "Zelda Facial Expression - Ainsley Harriott", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda4.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda4.png" },
+      { title: "Zelda Facial Expression - Tobey Maguire", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda3.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda3.png" },
+      { title: "Zelda Facial Expression - Steve Carell", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda2.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda2.png" },
+      { title: "Zelda Facial Expression - Anthony Davis", "date": "2023/06/07", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/zelda1.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/zelda1.png" },
+      { title: "Lumiel - Portrait (OC Redesigned)", "date": "2021/10/23", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/lumiel-avatar.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/lumiel-avatar.png" },
+      { title: "Sword Girls 1", "date": "2022/03/16", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-1.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-1.png" },
+      { title: "Sword Girls 2", "date": "2022/03/17", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-2.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-2.png" },
+      { title: "Sword Girls 3", "date": "2022/03/18", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-3.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-3.png" },
+      { title: "Sword Girls 4", "date": "2022/03/19", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-4.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-4.png" },
+      { title: "Sword Girls 5", "date": "2022/03/20", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-5.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-5.png" },
+      { title: "Sword Girls 6", "date": "2022/03/21", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-6.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-6.png" },
     ],
     socials: [
-      { show: true, name: "ArtStation", icon: "mdi-artstation", color: "blue", href: "https://artstation.com/flafdraws" },
       { show: true, name: "Instagram", icon: "mdi-instagram", color: "pink-5", href: "https://instagram.com/flafdraws" },
-      { show: true, name: "DeviantArt", icon: "mdi-deviantart", color: "green", href: "https://deviantart.com/flafdraws" },
       { show: true, name: "Twitter", icon: "mdi-twitter", color: "light-blue", href: "https://twitter.com/flafdraws" },
       { show: true, name: "Youtube", icon: "mdi-youtube", color: "red", href: "https://www.youtube.com/channel/UCLq1fsQwY9fP3dOF8JBhjLw?sub_confirmation=1" },
+      { show: true, name: "TikTok", icon: "mdi-music-note-outline", color: "pink", href: "https://www.tiktok.com/flafdraws" },
       { show: true, name: "Twitch", icon: "mdi-twitch", color: "purple-5", href: "https://twitch.com/flafdraws" },
       { show: true, name: "Reddit", icon: "mdi-reddit", color: "orange-10", href: "https://www.reddit.com/user/flafdraws" },
-      { show: true, name: "Discord", icon: "discord", color: "deep-purple-4", href: "https://discord.gg/U3vAmcuxSN" },
       { show: true, name: "Ko-fi", icon: "img:kofi.svg", color: "light-blue", href: "https://ko-fi.com/flafdraws" }
     ],
     about: {
@@ -71,9 +72,9 @@ export function fetchMockedJSON() {
             "Wise",
             "Stripe",
             "Paypal",
-            "Artistree",
+            "BTC",
             "Ko-fi",
-            "Pix (Brazil only)"
+            "Pix (Brazil only)",
           ]
         },
         { type: "big-spacer", content: null },
@@ -89,7 +90,7 @@ export function fetchMockedJSON() {
         { type: "big-spacer", content: null },
 
         { type: "h5", content: "Termination" },
-        { type: "span", content: "If the client fails to respond to revisions from the artist for a period longer than 14 days, the commission will deemed completed by both parties without need of refunds or further work." },
+        { type: "span", content: "If the client fails to respond to revisions from the artist for a period longer than 30 days, the commission will deemed completed by both parties without need of refunds or further work." },
         { type: "big-spacer", content: null },
 
         { type: "h5", content: "Deadline" },
@@ -108,63 +109,6 @@ export function fetchMockedJSON() {
         { type: "span", content: "Personal usage in social media does not require crediting the artist." },
         { type: "span", content: "The artist retains the commercial use rights to the work unless negotiated otherwise." },
       ]
-    },
-    prices: {
-      header: undefined,
-      body: [
-        { type: "h4", content: "CHARACTERS" },
-        {
-          type: "table", content: [
-            ["Item", "Price"],
-            ["Icon", "40 USD"],
-            ["Bust", "50 USD"],
-            ["Half-body", "70 USD"],
-            ["Full-body", "90 USD"]
-          ]
-        },
-        {
-          type: "gallery", content: [
-            { thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/style-exploration.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/style-exploration.png" },
-            { thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-6.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-6.png" },
-            { thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/mood.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/mood.png" },
-          ]
-        },
-        { type: "mega-spacer", content: null },
-
-        { type: "h4", content: "BACKGROUND" },
-        {
-          type: "table", content: [
-            ["Item", "Price"],
-            ["Plain Color or Gradient", "Free"],
-            ["Abstract Design", "20 USD"],
-            ["Simple Environment", "50 USD"],
-            ["Complex Scene (Perspective, architecture...)", "90 USD"]
-          ]
-        },
-        {
-          type: "gallery", content: [
-            { thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/lake-night.png", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/lake-night.png" },
-          ]
-        },
-        { type: "mega-spacer", content: null },
-
-        { type: "h4", content: "COMMERCIAL USE" },
-        { type: "span", content: "For commercial use of commissions, contact me through the following channels:" },
-        {
-          type: "ul", content: ["Discord: flafdraws#5176", "E-mail: flafdraws.buy@gmail.com"]
-        },
-        { type: "mega-spacer", content: null },
-
-        { type: "h5", content: "Notes", icon: "mdi-comment-alert", iconColor: "warning" },
-        {
-          type: "ul", content: [
-            "All prices listed here are <b>estimated</b> and may change based on multiple factors (e.g.: character detail, scene detail, render level).",
-            "Prices are <b>limited time offers</b> and are not guaranteed to stay the same in the future.",
-            "Everything is negotiable",
-            "Remember to check the TOS tab for in-depth details.",
-          ]
-        },
-      ],
     },
     buy: {
       formUrl: "https://docs.google.com/forms/u/2/d/e/1FAIpQLSdTIue8l5zYda8oF7SYjK0tIZSZ3Ibg6ZTn4N-MUcP6xv4OGg/formResponse"

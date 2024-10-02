@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :banner-src="banner" @keydown.left="keyEvent" />
+    <Header :banner-src="banner" :email="email" @keydown.left="keyEvent" />
     <Navbar ref="nav" v-model="tab" />
 
     <Loading :loading="loading" />
@@ -10,7 +10,6 @@
       <Art v-show="tab == 0" :items="artProjects" />
       <About v-show="tab == 1" :about="about" :loading="loading" />
       <TOS v-show="tab == 2" :tos="tos" />
-      <!-- <Prices v-show="tab == 3" :prices="prices" /> -->
       <Buy v-show="tab == 3" :buy="buy" />
     </div>
 
@@ -55,6 +54,7 @@ const about = ref();
 const tos = ref();
 const prices = ref();
 const buy = ref();
+const email = ref("");
 
 const loading = computed(() => !isLoaded.value);
 
@@ -72,6 +72,7 @@ function fetchPageData() {
         prices.value = json.prices;
         buy.value = json.buy;
         isLoaded.value = true;
+        email.value = json.about.contact[0]
       },
       value => {
         failedToLoad.value = true;
