@@ -4,8 +4,8 @@
       <p class="banner header-minor q-pa-none q-ma-none">Art of</p>
       <p class="banner header-major q-pa-none q-ma-none">Flaf</p>
       <div class="flex items-center row q-pa-none q-pa-none">
-        <q-icon name="email" class="q-mx-xs" size="sm"></q-icon>
-        <span flat class="q-mx-xs mailbtn " @click="copyToClipboard(email)">flafdraws.buy@gmail.com</span>
+        <q-icon name="email" class="q-mx-xs mailicon" size="sm"></q-icon>
+        <span flat class="q-mx-xs mailbtn" @click="copyToClipboard(email)">flafdraws.buy@gmail.com</span>
       </div>
     </div>
   </q-parallax>
@@ -60,6 +60,10 @@ const copyToClipboard = async function copyTextToClipboard(email) {
 
 .banner {
   text-shadow: 2px 2px 4px black;
+}
+
+.mailicon {
+  text-shadow: 2px 2px 8px black, 2px 2px 8px black;
 }
 
 .mailbtn {
