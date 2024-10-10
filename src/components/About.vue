@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center items-start">
     <div class="flex column justify-center items-center q-pt-md column-margin">
-      <img src="avatar.png" width="200" height="200" class="avatar" />
+      <img :src="about.avatar" width="200" height="200" class="avatar" />
       <span class="name">{{ about.name }}</span>
       <span class="title">{{ about.title }}</span>
       <div class="flex column q-mt-sm q-mb-md">
@@ -30,7 +30,8 @@ const props = defineProps({
       title: "",
       contact: [],
       text: [],
-      thanks: ""
+      thanks: "",
+      avatar: "https://raw.githubusercontent.com/flafdraws/gallery/main/ui/avatar.jpg"
     })
   },
   loading: {
