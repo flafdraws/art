@@ -33,8 +33,12 @@ export function fetchMockedJSON() {
       { show: true, name: "X (Twitter)", icon: "fa-brands fa-x-twitter", color: "white", href: "https://twitter.com/flafdraws" },
       { show: true, name: "Instagram", icon: "fa-brands fa-instagram", color: "pink-5", href: "https://instagram.com/flafdraws" },
       { show: true, name: "Pixiv", icon: "fa-brands fa-pixiv", color: "light-blue", href: "https://www.pixiv.net/en/users/68301729" },
+      { show: true, name: "Cara", icon: "img:sns/cara.svg", color: "white", href: "https://cara.app/flafdraws" },
       { show: true, name: "Youtube", icon: "fa-brands fa-youtube", color: "red", href: "https://www.youtube.com/channel/UCLq1fsQwY9fP3dOF8JBhjLw?sub_confirmation=1" },
-      { show: true, name: "Twitch", icon: "fa-brands fa-twitch", color: "purple-5", href: "https://twitch.com/flafdraws" }
+      { show: true, name: "Twitch", icon: "fa-brands fa-twitch", color: "purple-5", href: "https://twitch.com/flafdraws" },
+      { show: false, name: "TikTok", icon: "fa-brands fa-tiktok", color: "pink", href: "https://www.tiktok.com/@flafdraws" },
+      { show: false, name: "Reddit", icon: "fa-brands fa-reddit", color: "orange", href: "https://reddit.com/u/flafdraws" },
+      { show: false, name: "Ko-fi", icon: "img:sns/kofi.svg", color: "blue-6", href: "https://ko-fi.com/flafdraws" },
     ],
     about: {
       name: "FLÁVIO FREITAS",

@@ -5,9 +5,7 @@
       class="social-btn">
         <q-icon :name="item.icon" :color="item.color" size="24px"></q-icon>
         <q-tooltip :class="`bg-${item.color} text-caption text-weight-bold text-black`" anchor="top middle"
-          self="bottom middle">{{
-          item.name
-          }}
+          self="bottom middle">{{ item.name }}
         </q-tooltip>
       </a>
     </div>
