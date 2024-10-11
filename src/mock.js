@@ -30,11 +30,11 @@ export function fetchMockedJSON() {
       { title: "Sword Girls 6", "date": "2022/03/21", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-6.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-6.png" },
     ],
     socials: [
-      { show: true, name: "X (Twitter)", icon: "fa-x-twitter", color: "white", href: "https://twitter.com/flafdraws" },
-      { show: true, name: "Instagram", icon: "fa-instagram", color: "pink-5", href: "https://instagram.com/flafdraws" },
-      { show: true, name: "Pixiv", icon: "fa-pixiv", color: "light-blue", href: "https://www.pixiv.net/en/users/68301729" },
-      { show: true, name: "Youtube", icon: "fa-youtube", color: "red", href: "https://www.youtube.com/channel/UCLq1fsQwY9fP3dOF8JBhjLw?sub_confirmation=1" },
-      { show: true, name: "Twitch", icon: "fa-twitch", color: "purple-5", href: "https://twitch.com/flafdraws" }
+      { show: true, name: "X (Twitter)", icon: "fa-brands fa-x-twitter", color: "white", href: "https://twitter.com/flafdraws" },
+      { show: true, name: "Instagram", icon: "fa-brands fa-instagram", color: "pink-5", href: "https://instagram.com/flafdraws" },
+      { show: true, name: "Pixiv", icon: "fa-brands fa-pixiv", color: "light-blue", href: "https://www.pixiv.net/en/users/68301729" },
+      { show: true, name: "Youtube", icon: "fa-brands fa-youtube", color: "red", href: "https://www.youtube.com/channel/UCLq1fsQwY9fP3dOF8JBhjLw?sub_confirmation=1" },
+      { show: true, name: "Twitch", icon: "fa-brands fa-twitch", color: "purple-5", href: "https://twitch.com/flafdraws" }
     ],
     about: {
       name: "FLÁVIO FREITAS",
