@@ -32,7 +32,7 @@ export function fetchMockedJSON() {
     socials: [
       { show: true, name: "X (Twitter)", icon: "fa-x-twitter", color: "white", href: "https://twitter.com/flafdraws" },
       { show: true, name: "Instagram", icon: "fa-instagram", color: "pink-5", href: "https://instagram.com/flafdraws" },
-      { show: true, name: "Pixiv", icon: "fa-pixiv", color: "light-blue", href: "https://twitter.com/flafdraws" },
+      { show: true, name: "Pixiv", icon: "fa-pixiv", color: "light-blue", href: "https://www.pixiv.net/en/users/68301729" },
       { show: true, name: "Youtube", icon: "fa-youtube", color: "red", href: "https://www.youtube.com/channel/UCLq1fsQwY9fP3dOF8JBhjLw?sub_confirmation=1" },
       { show: true, name: "Twitch", icon: "fa-twitch", color: "purple-5", href: "https://twitch.com/flafdraws" }
     ],
