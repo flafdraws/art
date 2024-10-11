@@ -1,8 +1,9 @@
 <template>
   <div>
     <Header :banner-src="banner" :email="email" :socials="socials" @keydown.left="keyEvent" />
-    <Navbar ref="nav" v-model="tab" class="q-mb-md"/>
-    <Socials :socials="socials"  class="q-my-md"/>
+    
+    <Navbar ref="nav" v-model="tab" class="q-mb-sm"/>
+    <Socials :socials="socials"  class="q-mb-lg"/>
 
     <Loading :loading="loading" />
     <LoadingFailed v-if="failedToLoad && !loading" @reload="fetchPageData" />

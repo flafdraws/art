@@ -6,6 +6,7 @@ export function fetchMockedJSON() {
   const data = {
     banner: "https://raw.githubusercontent.com/flafdraws/gallery/main/banner/banner.jpg",
     art: [
+      { title: "The Conjuring of Evil Duolingo", "date": "2024/10/08", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/duolingo-witch.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/duolingo-witch.jpg" },
       { title: "That support who doesn't heal", "date": "2024/10/02", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/ro-priest.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/ro-priest.jpg" },
       { title: "Miku Churrasqueira", "date": "2024/09/24", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/mikuchurrasqueira.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/mikuchurrasqueira.jpg" },
       { title: "犬✕猫・Dog x Cat", "date": "2024/07/18", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/dogxcat.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/dogxcat.jpg" },
@@ -29,13 +30,11 @@ export function fetchMockedJSON() {
       { title: "Sword Girls 6", "date": "2022/03/21", thumb: "https://raw.githubusercontent.com/flafdraws/gallery/main/thumb/sword-girl-6.jpg", img: "https://raw.githubusercontent.com/flafdraws/gallery/main/full/sword-girl-6.png" },
     ],
     socials: [
-      { show: true, name: "Instagram", icon: "mdi-instagram", color: "pink-5", href: "https://instagram.com/flafdraws" },
-      { show: true, name: "Twitter", icon: "mdi-twitter", color: "light-blue", href: "https://twitter.com/flafdraws" },
-      { show: true, name: "Youtube", icon: "mdi-youtube", color: "red", href: "https://www.youtube.com/channel/UCLq1fsQwY9fP3dOF8JBhjLw?sub_confirmation=1" },
-      { show: true, name: "TikTok", icon: "mdi-music-note-outline", color: "pink", href: "https://www.tiktok.com/flafdraws" },
-      { show: true, name: "Twitch", icon: "mdi-twitch", color: "purple-5", href: "https://twitch.com/flafdraws" },
-      { show: true, name: "Reddit", icon: "mdi-reddit", color: "orange-10", href: "https://www.reddit.com/user/flafdraws" },
-      { show: true, name: "Ko-fi", icon: "img:kofi.svg", color: "light-blue", href: "https://ko-fi.com/flafdraws" }
+      { show: true, name: "X (Twitter)", icon: "fa-x-twitter", color: "white", href: "https://twitter.com/flafdraws" },
+      { show: true, name: "Instagram", icon: "fa-instagram", color: "pink-5", href: "https://instagram.com/flafdraws" },
+      { show: true, name: "Pixiv", icon: "fa-pixiv", color: "light-blue", href: "https://twitter.com/flafdraws" },
+      { show: true, name: "Youtube", icon: "fa-youtube", color: "red", href: "https://www.youtube.com/channel/UCLq1fsQwY9fP3dOF8JBhjLw?sub_confirmation=1" },
+      { show: true, name: "Twitch", icon: "fa-twitch", color: "purple-5", href: "https://twitch.com/flafdraws" }
     ],
     about: {
       name: "FLÁVIO FREITAS",
@@ -52,7 +51,7 @@ export function fetchMockedJSON() {
         "flafdraws.buy@gmail.com",
         "flafdraws#5176 (Discord)"
       ],
-      avatar: "avatar.png"
+      avatar: "https://raw.githubusercontent.com/flafdraws/gallery/main/ui/avatar.jpg"
     },
     tos: {
       header: "TERMS OF SERVICE",

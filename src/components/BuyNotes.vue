@@ -8,7 +8,10 @@
       <q-icon name="mdi-chevron-right" size="sm" />
       <div class="note-item">
         See my
-        <a target="_blank" href="https://trello.com/b/u4aypX98/flaf-commissions"><b>Commission Board</b></a>
+        <a target="_blank" href="https://trello.com/b/u4aypX98/flaf-commissions">
+          <q-icon name="mdi-trello" color="light-blue" class="mini-icon"></q-icon>
+          <b>Commission Board</b>
+        </a>
         to check ongoing commissions and past orders.
       </div>
     </div>
@@ -16,10 +19,15 @@
       <q-icon name="mdi-chevron-right" size="sm" />
       <div class="note-item">
         Public commissions may be streamed at my
-        <a target="_blank" href="https://www.twitch.tv/flafdraws"><b>Twitch Channel</b></a>
+        <a target="_blank" href="https://www.twitch.tv/flafdraws">
+          <q-icon name="mdi-twitch" color="purple" class="mini-icon"></q-icon>
+          <b>Twitch Channel</b>
+        </a>
         or showcased at my
-        <a target="_blank" href="https://www.youtube.com/channel/UCLq1fsQwY9fP3dOF8JBhjLw?sub_confirmation=1"><b>Youtube
-            Channel</b></a>.
+        <a target="_blank" href="https://www.youtube.com/channel/UCLq1fsQwY9fP3dOF8JBhjLw?sub_confirmation=1">
+          <q-icon name="mdi-youtube" color="red" class="mini-icon"></q-icon>
+          <b>Youtube Channel</b>
+        </a>.
       </div>
     </div>
     <div class="flex flex-start row no-wrap">
@@ -63,5 +71,9 @@ h5 {
 .note-item {
   flex-grow: 999;
   text-align: left;
+}
+
+.mini-icon {
+  padding-right: 3px;
 }
 </style>
