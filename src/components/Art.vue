@@ -10,7 +10,7 @@
         </div>
       </li>
     </ul>
-
+      
     <DialogGallery v-model="currentIndex" :items="items" :show="showDialog" @update:show="showDialog = $event" />
   </div>
 </template>
@@ -38,33 +38,71 @@ const onItemClick = (value) => {
 
 <style scoped>
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
   gap: 2px;
   list-style-type: none;
   padding-inline-start: 0;
+  grid-template-columns: 1fr;
+  justify-items: left;
+  align-items: center;
+}
+
+@media(min-width: 640px) {
+    .gallery {
+        grid-template-columns:repeat(2,1fr)
+    }
+}
+
+@media(min-width: 992px) {
+    .gallery {
+        grid-template-columns:repeat(3,1fr)
+    }
+}
+
+@media(min-width: 1200px) {
+    .gallery {
+        grid-template-columns:repeat(4,1fr)
+    }
+}
+
+@media(min-width: 1440px) {
+    .gallery {
+        grid-template-columns:repeat(4,1fr)
+    }
+}
+
+@media(min-width: 1680px) {
+    .gallery {
+        grid-template-columns:repeat(5,1fr)
+    }
+}
+
+@media(min-width: 1920px) {
+    .gallery {
+        grid-template-columns:repeat(6,1fr)
+    }
+}
+
+@media(min-width: 2560px) {
+    .gallery {
+        grid-template-columns:repeat(7,1fr)
+    }
+}
+
+@media(min-width: 3000px) {
+    .gallery {
+        grid-template-columns:repeat(8,1fr)
+    }
 }
 
 .gallery-item {
-  height: 40vh;
+  justify-self: flex-start;
+  align-self: flex-start;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-}
-
-@media (max-aspect-ratio: 1/1) {
-  .gallery-item {
-    /* width: 95vw; */
-    height: auto;
-  }
-}
-
-@media (max-height: 480px) {
-  .gallery-item {
-    width: auto;
-    height: 80vh;
-  }
+  margin: 0;
+  padding: 0;
 }
 
 .gallery-item img {
@@ -76,6 +114,12 @@ const onItemClick = (value) => {
 
 .no-pointer {
   pointer-events: none;
+}
+
+.dummy {
+  flex-grow: 10;
+  height: 200px;
+  background-color: greenyellow;
 }
 
 .item-fade {
